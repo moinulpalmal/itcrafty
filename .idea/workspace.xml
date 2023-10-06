@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1k83xQKr7mfofwR967deO3dNkk9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/services/master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\services\master" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\layouts\common-modals" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase\requisition" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase\warranty" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\layouts\common-modal-js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\services\warranty" />
+      <recent name="D:\PlaMal Web Apps\Laravel\7_X\plibrary\public" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="npm install" />
+      <command value="artisan make:middleware ApprovalMiddleware" />
+      <command value="artisan make:middleware CheckAdministrator" />
+      <command value="artisan make:model Model/Role" />
+      <command value="artisan make:model Model/Role -m" />
+      <command value="artisan make:migration --create role_user_table --create=role_user" />
+      <command value="artisan make:migration create_role_user_table --create=role_user" />
+      <command value="artisan make:model Model/Task -m" />
+      <command value="artisan make:migration create_task_user_table --create=task_user" />
+      <command value="artisan make:controller Admin/UserController" />
+      <command value="artisan make:controller Admin/RoleController" />
+      <command value="artisan make:model Model/ProductGroup -m" />
+      <command value="artisan make:controller Admin/ProductGroupController" />
+      <command value="artisan make:controller Admin/SupplierController" />
+      <command value="artisan make:model Model/Supplier -m" />
+      <command value="artisan make:migration create_product_group_supplier_table --create=product_group_supplier" />
+      <command value="artisan make:model Model/Buyer -m" />
+      <command value="artisan make:controller Admin/BuyerController" />
+      <command value="artisan make:model Model/DeliveryLocation -m" />
+      <command value="artisan make:controller Admin/DeliveryLocationController" />
+      <command value="artisan make:controller Admin/UnitController" />
+      <command value="artisan make:migration create_unit_conv_table --create=unit_conv" />
+      <command value="artisan make:model Model/Cunrrency -m" />
+      <command value="artisan make:model Model/Currency -m" />
+      <command value="artisan make:controller Admin/CurrencyController" />
+      <command value="artisan make:model Model/CartoonProductSetup -m" />
+      <command value="artisan make:model Model/CartoonProductPriceSetup -m" />
+      <command value="artisan make:middleware CheckCartoon" />
+      <command value="artisan make:controller Cartoon/ProductSetupController" />
+      <command value="artisan make:model Model/PurchaseOrderMaster -m" />
+      <command value="artisan make:controller Cartoon/BookingController" />
+      <command value="artisan make:middleware CheckCreateCB" />
+      <command value="artisan make:model Model/CartoonPurchaseOrderDetail -m" />
+      <command value="artisan make:middleware CheckUpdateCB" />
+      <command value="artisan make:controller Elastic/BookingController" />
+      <command value="artisan make:controller Elastic/ProductSetupController" />
+      <command value="artisan make:middleware CheckElastic" />
+      <command value="artisan make:middleware CheckCreateE" />
+      <command value="artisan make:model Model/ElasticProductSetup -m" />
+      <command value="artisan make:model Model/ElasticProductPriceSetup -m" />
+      <command value="artisan make:migration add_year_month_purchase_order_masters_table --create=purchase_order_masters" />
+      <command value="artisan make:model Model/ElasticPurchaseOrderDetail -m" />
+      <command value="artisan make:model Model/FabricProductSetup -m" />
+      <command value="artisan make:model Model/FabricProductPriceSetup -m" />
+      <command value="artisan make:model Model/FabricPurchaseOrderDetail -m" />
+      <command value="artisan make:controller Tissue/BookingController" />
+      <command value="artisan make:controller Tissue/ProductSetupController" />
+      <command value="artisan make:model Model/TissueProductSetup -m" />
+      <command value="artisan make:model Model/TissueProductPriceSetup -m" />
+      <command value="artisan make:model Model/TissuePurchaseOrderDetail -m" />
+      <command value="artisan make:middleware CheckCreateT" />
+      <command value="artisan make:middleware CheckUpdateT" />
+      <command value="artisan make:model Model/InterliningProductSetup -m" />
+      <command value="artisan make:model Model/InterliningProductPriceSetup -m" />
+      <command value="artisan make:model Model/InterliningPurchaseOrderDetail -m" />
+      <command value="artisan make:model Model/InterliningPODetail -m" />
+      <command value="artisan make:controller Interlining/ProductSetupController" />
+      <command value="artisan make:controller Interlining/ProductPriceSetupController" />
+      <command value="artisan make:middleware CheckInterlining" />
+      <command value="artisan make:middleware CheckUpdateI" />
+      <command value="artisan make:middleware CheckCreateI" />
+      <command value="artisan make:model Model/QCStickerProductSetup -m" />
+      <command value="artisan make:model Model/QCStickerProductPriceSetup -m" />
+      <command value="artisan make:model Model/QCStickerPODetail -m" />
+      <command value="artisan make:middleware CheckQCSticker" />
+      <command value="artisan make:middleware CheckCreateQC" />
+      <command value="artisan make:middleware CheckUpdateQCS" />
+      <command value="artisan make:middleware CheckArrowSticker" />
+      <command value="artisan make:middleware CheckCreateAS" />
+      <command value="artisan make:middleware CheckUpdateAS" />
+      <command value="artisan make:controller ArrowSticker/ProductSetupController" />
+      <command value="artisan make:controller ArrowSticker/BookingController" />
+      <command value="artisan make:model Model/AStickerProductSetup -m" />
+      <command value="artisan make:model Model/AStickerProductPriceSetup -m" />
+      <command value="artisan make:model Model/AStickerPODetail -m" />
+      <command value="artisan make:controller Thread/BookingController" />
+      <command value="artisan make:controller Thread/ProductSetupController" />
+      <command value="artisan make:middleware CheckGumtape" />
+      <command value="artisan make:middleware CheckUpdateG" />
+      <command value="artisan make:middleware CheckCreateG" />
+      <command value="artisan make:controller GumTape/ProductSetupController" />
+      <command value="artisan make:controller GumTape/BookingController" />
+      <command value="artisan make:model Model/GumTapeProductSetup -m" />
+      <command value="artisan make:model Model/GumTapePODetail -m" />
+      <command value="artisan make:model Model/GumTapeProductPriceSetup -m" />
+      <command value="artisan make:model Model/ThreadProductSetup -m" />
+      <command value="artisan make:model Model/ThreadProductPriceSetup -m" />
+      <command value="artisan make:model Model/TreadPODetail -m" />
+      <command value="artisan make:model Model/ThreadPODetail -m" />
+      <command value="artisan make:model Model/ThreadProductColorSetup -m" />
+      <command value="artisan make:middleware CheckThread" />
+      <command value="artisan make:middleware CheckCreateTD" />
+      <command value="artisan make:middleware CheckUpdateTD" />
+      <command value="artisan make:model Model/PolyGroupSetup -m" />
+      <command value="artisan make:model Model/PolyProductSetup -m" />
+      <command value="artisan make:model Model/PolyProductPriceSetup -m" />
+      <command value="artisan make:middleware CheckPoly" />
+      <command value="artisan make:middleware CheckUpdateP" />
+      <command value="artisan make:middleware CheckCreateP" />
+      <command value="artisan make:controller Poly/BookingController" />
+      <command value="artisan make:controller Poly/ProductSetupController" />
+      <command value="artisan make:model Model/PolyPODetail -m" />
+      <command value="artisan make:migration add_order_unit_poly_p_o_details_table --create=poly_p_o_details" />
+      <command value="artisan make:migration add_order_unit_poly_p_o_details_table" />
+      <command value="artisan make:migration add_order_unit_to_poly_p_o_details_table" />
+      <command value="artisan make:migration add_no_cal_to_cartoon_purchase_order_details_table" />
+      <command value="artisan make:model Model/GeneralProductSetup -m" />
+      <command value="artisan make:model Model/GeneralProductPriceSetup -m" />
+      <command value="artisan make:controller GeneralItem/ProductSetupController" />
+      <command value="artisan make:controller GeneralItem/BookingController" />
+      <command value="artisan make:middleware CheckGeneralItem" />
+      <command value="artisan make:middleware CheckCreateGI" />
+      <command value="artisan make:middleware CheckUpdateGI" />
+      <command value="artisan make:model Model/GeneralPODetail -m" />
+      <command value="artisan make:migration add_no_cal_to_thread_p_o_details_table" />
+      <command value="artisan make:migration add_color_to_thread_p_o_details_table" />
+      <command value="artisan make:migration no_color_to_fabric_purchase_order_details_table" />
+      <command value="artisan make:migration add_color_to_fabric_purchase_order_details_table" />
+      <command value="artisan make:model Model/DeliveryLocationDetail -m" />
+      <command value="artisan make:migration add_delivery_location_detail_id_to_purchase_order_masters_table" />
+      <command value="artisan key:generate" />
+      <command value="artisan make:middleware CheckCreateBuyer" />
+      <command value="artisan make:controller Admin/StyleDepartmentController" />
+      <command value="artisan make:migration add_b_name_to_buyers_table" />
+      <command value="artisan make:model Model/Country -m" />
+      <command value="artisan make:controller Admin/CountryController" />
+      <command value="artisan make:model Model/Unit -m" />
+      <command value="artisan make:migration add_new_country_id_to_buyers_table" />
+      <command value="artisan make:model Model/BuyerCountry -m" />
+      <command value="artisan make:model Model/StyleDepartment -m" />
+      <command value="artisan make:model Model/BuyerSeason -m" />
+      <command value="artisan make:controller Admin/BuyerSeasonController" />
+      <command value="artisan make:model Model/Fabric -m" />
+      <command value="artisan make:controller Admin/FabricController" />
+      <command value="artisan make:model Model/StyleMaster -m" />
+      <command value="artisan migrate." />
+      <command value="artisan make:model Model/StyleFabric -m" />
+      <command value="artisan make:model Model/StyleImage -m" />
+      <command value="artisan make:controller Admin/StyleOldeDataController" />
+      <command value="artisan make:controller Library/StyleOldeDataController" />
+      <command value="artisan make:model Model/StyleImageOld -m" />
+      <command value="artisan make:middleware CheckLibrary" />
+      <command value="artisan make:model Model/StyleBank -m" />
+      <command value="artisan make:model Model/StyleBankStore -m" />
+      <command value="artisan make:controller Library/StyleBankController" />
+      <command value="artisan make:middleware CheckCreateStyle" />
+      <command value="artisan make:migration add_is_main_to_style_images_table" />
+      <command value="artisan make:controller Merchandising/StyleBankStoreController" />
+      <command value="artisan make:middleware CheckMerchandising" />
+      <command value="artisan" />
+      <command value="artisan make:middleware CheckEditStyle" />
+      <command value="artisan make:controller Merchandising/StyleBankController" />
+      <command value="artisan make:model Model/Factory -m" />
+      <command value="artisan make:controller Settings/FactoryController" />
+      <command value="artisan make:model Model/FactoryIt -m" />
+      <command value="artisan make:model Model/Designation -m" />
+      <command value="artisan make:controller Settings/FactoryITController" />
+      <command value="artisan make:controller Settings/DepartmentController" />
+      <command value="artisan make:controller Settings/DesignationController" />
+      <command value="artisan make:model Model/Department -m" />
+      <command value="artisan make:model Model/Customer -m" />
+      <command value="artisan make:controller Settings/CustomerController" />
+      <command value="artisan make:controller Settings/ProductCategoryController" />
+      <command value="artisan make:controller Settings/ProductMasterController" />
+      <command value="artisan make:model Model/Manufacturer -m" />
+      <command value="artisan make:model Model/ProductCategory -m" />
+      <command value="artisan make:model Model/ProductSubCategory -m" />
+      <command value="artisan make:controller Settings/ProductManufacturerController" />
+      <command value="artisan make:controller Settings/ProductSubCategoryController" />
+      <command value="artisan server" />
+      <command value="artisan make:model Model/Vendor -m" />
+      <command value="artisan make:model Model/VendorPerson -m" />
+      <command value="artisan make:controller Settings/ProductVendorController" />
+      <command value="artisan make:controller Settings/ProductVendorPersonController" />
+      <command value="artisan make:model Model/ProductMaster -m" />
+      <command value="artisan make:model Model/ProductDetail -m" />
+      <command value="artisan make:controller Settings/ProductDetailController" />
+      <command value="artisan make:model Model/ServiceMaster -m" />
+      <command value="artisan make:model Model/ServiceHistory -m" />
+      <command value="artisan make:model Model/ServiceRequisition -m" />
+      <command value="artisan make:model Model/ServiceWarrantyRequest -m" />
+      <command value="artisan make:model Model/ServiceSolver -m" />
+      <command value="artisan make:model Model/ServiceRequest -m" />
+      <command value="artisan make:model Model/ServiceRequestEmail -m" />
+      <command value="artisan make:model Model/ServiceRequestEmailFrom -m" />
+      <command value="artisan make:model Model/ServiceRequestEmailTo -m" />
+      <command value="artisan make:model Model/Requisition -m" />
+      <command value="artisan make:model Model/ServiceRequestType -m" />
+      <command value="artisan make:controller Services/ServiceMasterController" />
+      <command value="artisan make:model Model/ServiceAssign -m" />
+      <command value="artisan make:migration add_has_requisition_request_to_service_masters_table" />
+      <command value="artisan make:mail SendWarrantyRequest" />
+      <command value="artisan make:migration add_email__to_vendor_people_table" />
+      <command value="artisan make:model View_Model/EmailList" />
+      <command value="artisan make:mail SendRequisitionRequest" />
+      <command value="artisan make:migration add_requisition_receive_to_service_masters_table" />
+      <command value="artisan make:mail SendServiceComplete" />
+      <command value="artisan make:mail GenerateWarrantyRequest" />
+      <command value="artisan make:migration add_warranty_service_masters_table" />
+      <command value="artisan make:controller Services/ServiceWarrantyController" />
+      <command value="artisan make:controller Purchase/PurchaseWarrantyController" />
+      <command value="artisan make:controller Purchase/ProductDetailController" />
+      <command value="artisan make:controller Services/ServiceSearchController" />
+      <command value="artisan make:model Model/ServiceStatus -m" />
+      <command value="artisan db:seed --force" />
+      <command value="artisan make:middleware CheckFactoryDepartment" />
+      <command value="artisan make:middleware CheckFactoryIT" />
+      <command value="artisan make:middleware CheckDesignation" />
+      <command value="artisan make:middleware CheckEmployee" />
+      <command value="artisan make:middleware CheckProduct" />
+      <command value="artisan make:middleware CheckProductMaster" />
+      <command value="artisan make:middleware CheckProductDetail" />
+      <command value="artisan make:middleware CheckProductVendor" />
+      <command value="artisan make:middleware CheckServicePerson" />
+      <command value="artisan make:middleware CheckServiceReceive" />
+      <command value="artisan make:middleware CheckServiceDelivery" />
+      <command value="artisan make:middleware CheckServiceLeader" />
+      <command value="artisan make:middleware CheckPurchase" />
+      <command value="artisan config:cache." />
+      <command value="artisan make:migration add_id_mac_product_details_table" />
+      <command value="artisan make:mail SendMacBindingRequest" />
+      <command value="artisan make:migration add_mac_binding_to_service_masters_table" />
+      <command value="artisan make:migration add_purchase_info_to_requisitions_table" />
+      <command value="artisan make:model Model/ServiceWarranty -m" />
+      <command value="artisan make:model Model/ServiceWarrantyCheck -m" />
+      <command value="artisan make:migration add_access_info_to_service_masters_table" />
+      <command value="artisan make:migration add_warranty_info_to_service_warranties_table" />
+      <command value="artisan make:mail AutoMail" />
+      <command value="artisan make:migration add_requisition_received_info_to_service_masters_table" />
+      <command value="artisan make:migration add_requisition_update_info_to_requisitions_table" />
+      <command value="artisan make:controller Purchase/PurchaseRequsitionController" />
+      <command value="artisan migrate:rollback" />
+      <command value="artisan make:migration add_edit_access_info_to_service_masters_table" />
+      <command value="artisan migrate" />
+      <command value="artisan config:cache" />
+      <command value="artisan serve" />
+    </option>
+  </component>
+  <component name="RunManager" selected="PHP Script.ServiceHistory.php">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ServiceHistory.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Model/ServiceHistory.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.ServiceHistory.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="" />
+      <created>1605068645949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605068645949</updated>
+      <workItem from="1605068664184" duration="13370000" />
+      <workItem from="1605152546661" duration="1282000" />
+      <workItem from="1605159393589" duration="336000" />
+      <workItem from="1605170276546" duration="1986000" />
+      <workItem from="1605410973610" duration="12516000" />
+      <workItem from="1605499250124" duration="7293000" />
+      <workItem from="1605524360265" duration="3732000" />
+      <workItem from="1605585413254" duration="21392000" />
+      <workItem from="1605672797288" duration="12650000" />
+      <workItem from="1605756281354" duration="5237000" />
+      <workItem from="1605931844088" duration="2907000" />
+      <workItem from="1605942054592" duration="7224000" />
+      <workItem from="1606015589532" duration="14135000" />
+      <workItem from="1606053987674" duration="226000" />
+      <workItem from="1606103817614" duration="13687000" />
+      <workItem from="1606188316887" duration="25967000" />
+      <workItem from="1606276254599" duration="12200000" />
+      <workItem from="1606292647604" duration="16272000" />
+      <workItem from="1606362045777" duration="31891000" />
+      <workItem from="1606443208789" duration="10988000" />
+      <workItem from="1606534247716" duration="27371000" />
+      <workItem from="1606621446169" duration="9143000" />
+      <workItem from="1606632724528" duration="15922000" />
+      <workItem from="1606707444298" duration="9000000" />
+      <workItem from="1606723564137" duration="8554000" />
+      <workItem from="1606793284506" duration="24578000" />
+      <workItem from="1606879906264" duration="24375000" />
+      <workItem from="1606964214336" duration="21866000" />
+      <workItem from="1607138560096" duration="8748000" />
+      <workItem from="1607149612772" duration="7170000" />
+      <workItem from="1607164493986" duration="6509000" />
+      <workItem from="1607224382764" duration="23747000" />
+      <workItem from="1607314996481" duration="10503000" />
+      <workItem from="1607329278954" duration="10738000" />
+      <workItem from="1607396605699" duration="31263000" />
+      <workItem from="1607484319929" duration="19772000" />
+      <workItem from="1607508450857" duration="9271000" />
+      <workItem from="1607570845807" duration="1647000" />
+      <workItem from="1607574988955" duration="2896000" />
+      <workItem from="1607751060594" duration="7888000" />
+      <workItem from="1607830593435" duration="5431000" />
+      <workItem from="1607916901326" duration="12651000" />
+      <workItem from="1608004855964" duration="8598000" />
+      <workItem from="1608174904976" duration="13750000" />
+      <workItem from="1608348877661" duration="1908000" />
+      <workItem from="1608371008527" duration="693000" />
+      <workItem from="1608436487427" duration="9536000" />
+      <workItem from="1608701453185" duration="7198000" />
+      <workItem from="1608782220944" duration="18250000" />
+      <workItem from="1608810277967" duration="2213000" />
+      <workItem from="1609126072118" duration="6700000" />
+      <workItem from="1609222310503" duration="4434000" />
+      <workItem from="1609301082645" duration="3451000" />
+      <workItem from="1609309017313" duration="9940000" />
+      <workItem from="1609396162969" duration="12745000" />
+      <workItem from="1609559310112" duration="15316000" />
+      <workItem from="1609644037897" duration="15548000" />
+      <workItem from="1609740967152" duration="11944000" />
+      <workItem from="1609759999050" duration="4867000" />
+      <workItem from="1609819243134" duration="19390000" />
+      <workItem from="1609904982657" duration="26412000" />
+      <workItem from="1609991045611" duration="10925000" />
+      <workItem from="1610166187748" duration="16967000" />
+      <workItem from="1610249709508" duration="15052000" />
+      <workItem from="1610273631863" duration="8770000" />
+      <workItem from="1610337507183" duration="15262000" />
+      <workItem from="1610422371857" duration="14047000" />
+      <workItem from="1610603820953" duration="8017000" />
+      <workItem from="1611004893651" duration="12809000" />
+      <workItem from="1611057081253" duration="700000" />
+      <workItem from="1611200533384" duration="9645000" />
+      <workItem from="1611224217044" duration="3210000" />
+      <workItem from="1611375477401" duration="3571000" />
+      <workItem from="1611380252273" duration="14685000" />
+      <workItem from="1611459946269" duration="16066000" />
+      <workItem from="1611547283557" duration="9113000" />
+      <workItem from="1611565211299" duration="2429000" />
+      <workItem from="1611640057058" duration="11875000" />
+      <workItem from="1618284153429" duration="8511000" />
+      <workItem from="1623047561277" duration="4255000" />
+      <workItem from="1629343379217" duration="16495000" />
+      <workItem from="1629367316598" duration="780000" />
+      <workItem from="1629368586304" duration="7521000" />
+      <workItem from="1629519122717" duration="22268000" />
+      <workItem from="1629601825181" duration="30964000" />
+      <workItem from="1629689599710" duration="29910000" />
+      <workItem from="1629775160198" duration="32577000" />
+      <workItem from="1629862084860" duration="30757000" />
+      <workItem from="1629948129043" duration="19483000" />
+      <workItem from="1629974876747" duration="3351000" />
+      <workItem from="1630121055114" duration="34293000" />
+      <workItem from="1630209009929" duration="25697000" />
+      <workItem from="1630379249294" duration="29977000" />
+      <workItem from="1630466465667" duration="29619000" />
+      <workItem from="1630553335884" duration="31713000" />
+      <workItem from="1630725438472" duration="29719000" />
+      <workItem from="1630811507772" duration="19411000" />
+      <workItem from="1630898858219" duration="6794000" />
+      <workItem from="1630908981642" duration="15830000" />
+      <workItem from="1630985383944" duration="75000" />
+      <workItem from="1630986248966" duration="16388000" />
+      <workItem from="1631072130494" duration="7556000" />
+      <workItem from="1631099334252" duration="2067000" />
+      <workItem from="1631159524936" duration="4442000" />
+      <workItem from="1631330890899" duration="3815000" />
+      <workItem from="1631429048712" duration="8363000" />
+      <workItem from="1631504735193" duration="17862000" />
+      <workItem from="1631589962508" duration="11771000" />
+      <workItem from="1631676252004" duration="6977000" />
+      <workItem from="1631763291874" duration="2469000" />
+      <workItem from="1631767405418" duration="18697000" />
+      <workItem from="1631935676096" duration="1424000" />
+      <workItem from="1631940008784" duration="9232000" />
+      <workItem from="1632107609730" duration="4268000" />
+      <workItem from="1632131256196" duration="2169000" />
+      <workItem from="1632198589691" duration="23097000" />
+      <workItem from="1632280784186" duration="22575000" />
+      <workItem from="1632367296781" duration="3197000" />
+      <workItem from="1632373109917" duration="4458000" />
+      <workItem from="1632399577276" duration="594000" />
+      <workItem from="1632541353164" duration="5463000" />
+      <workItem from="1632628968037" duration="6674000" />
+      <workItem from="1632665351473" duration="289000" />
+      <workItem from="1632716684254" duration="3265000" />
+      <workItem from="1632805804106" duration="594000" />
+      <workItem from="1632990477144" duration="4232000" />
+      <workItem from="1633146465824" duration="2975000" />
+      <workItem from="1633408613503" duration="1724000" />
+      <workItem from="1633491744547" duration="6457000" />
+      <workItem from="1638850697365" duration="4812000" />
+      <workItem from="1646220806415" duration="653000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="258" key="FileChooserDialogImpl" timestamp="1646220838342">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="739" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1646220838342" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1646223889083">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1646223889083">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1646223889067">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889067" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1646223889083">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1646220858455">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1646220858455" />
+    <state x="716" y="361" key="SymfonyComponentCompositeDataDialog" timestamp="1646220839092">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="716" y="361" key="SymfonyComponentCompositeDataDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1646220839092" />
+    <state x="616" y="238" width="672" height="672" key="run.anything.popup" timestamp="1646220866814">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="616" y="238" width="672" height="672" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1646220866814" />
+  </component>
+</project>
