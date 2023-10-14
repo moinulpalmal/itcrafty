@@ -10,6 +10,7 @@ use App\Http\Middleware\CheckEditUser;
 use App\Http\Middleware\CheckEmployee;
 use App\Http\Middleware\CheckFactoryDepartment;
 use App\Http\Middleware\CheckFactoryIT;
+use App\Http\Middleware\CheckIssue;
 use App\Http\Middleware\CheckProduct;
 use App\Http\Middleware\CheckProductDetail;
 use App\Http\Middleware\CheckProductMaster;
@@ -104,6 +105,7 @@ class Kernel extends HttpKernel
         'service_delivery_desk' => CheckServiceDelivery::class,
         'service_person' => CheckServicePerson::class,
         'purchase' => CheckPurchase::class,
+        'issue' => CheckIssue::class,
 
     ];
 }

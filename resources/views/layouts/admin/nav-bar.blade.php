@@ -143,7 +143,7 @@
                     <ul class="dropdown-menu">
                         <li class="dropdown dropdown-submenu {{ (request()->is('issue/old*')) ? 'active' : '' }}" data-menu="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" data-i18n="Warranty" data-toggle="dropdown">Old</a>
                             <ul class="dropdown-menu">
-                                <li class="{{ (request()->is('issue/old/entry')) ? 'active' : '' }}" data-menu=""><a class="dropdown-item" href="{{route('purchase.warranty.service-requested')}}" data-i18n="Requested Service" data-toggle="dropdown">Individual Issue Form</a></li>
+                                <li class="{{ (request()->is('issue/old/entry')) ? 'active' : '' }}" data-menu=""><a class="dropdown-item" href="{{route('issue.old.entry')}}" data-i18n="Requested Service" data-toggle="dropdown">Individual Issue Form</a></li>
                             </ul>
 
 

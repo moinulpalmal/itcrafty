@@ -1,0 +1,207 @@
+@extends('layouts.admin.admin-master')
+@section('title')
+    Add New Issue
+@endsection
+@section('content')
+    <style type="text/css">
+        .hide{
+            display: none;
+        }
+
+        th{
+            background-color: #0689bd;
+            color: white;
+        }
+    </style>
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12">
+                <h2 class="content-header-title mb-0">Dashboard</h2>
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active"><a href="{{route('issue.old.entry')}}">Add New Issue</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <section id="form-section">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Product Detail Insert/Update Form</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                        <li><a data-action="reload" onclick="clearForm('ProductIssueForm'); changeButtonText(' Save', 'submit_button', 3); /*clearCheckBox(); */resetCkeditor('Description');"><i class="feather icon-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body card-dashboard">
+                                    <form class="form" id="ProductIssueForm" method="post" action="#">
+                                        @csrf
+                                        <input type="hidden" id="HiddenFactoryID" class="form-control" name="id" >
+                                        <div class="form-body">
+                                            <h4 class="form-section"><i class="feather icon-eye"></i> Employee Info</h4>
+                                            <div class="row">
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="Factory" class=""><a class="text-info text-bold-700" onclick=" $('#NewFactory').modal({backdrop: 'static', keyboard: false});" data-toggle="modal" {{--data-target="#NewFactory"--}} title="Add New Factory">Select Factory</a>
+                                                        </label>
+                                                        <select id="Factory" class="select2 form-control" name="factory" required>
+                                                            <option value="">- - - Select  Factory - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="Designation" class=""><a class="text-info text-bold-700" onclick="$('#NewDesignation').modal({backdrop: 'static', keyboard: false});" data-toggle="modal" {{--data-target="#NewDesignation"--}} title="Add New Designation">Select Designation</a>
+                                                        </label>
+                                                        <select id="Designation" class="select2 form-control" name="designation" required>
+                                                            <option value="">- - - Select  Designation - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="Department" class=""><a class="text-info text-bold-700" onclick="$('#NewDepartment').modal({backdrop: 'static', keyboard: false});" data-toggle="modal" {{--data-target="#NewDepartment"--}} title="Add New Designation">Select Department</a>
+                                                        </label>
+                                                        <select id="Department" class="select2 form-control" name="department">
+                                                            <option value="">- - - Select  Department - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="JobLocation" class="text-bold-700">Job Location</label>
+                                                        <input type="text" id="JobLocation" maxlength="150" class="form-control" placeholder="Enter Job Location" name="job_location">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="CustomerID" class="text-bold-700">Employee ID</label>
+                                                        <input type="text" id="CustomerID" maxlength="20" class="form-control" placeholder="Enter Employee ID" name="employee_id" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="CustomerName" class="text-bold-700">Employee Name</label>
+                                                        <input type="text" id="CustomerName" maxlength="255" class="form-control" placeholder="Enter Customer Name" name="name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="EmailAddress" class="text-bold-700">Email Address</label>
+                                                        <input type="email" id="EmailAddress" maxlength="150" class="form-control" placeholder="xyz@palmalgarments.com" name="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="ExtNo" class="text-bold-700">Extension No</label>
+                                                        <input type="text" id="ExtNo" maxlength="4" class="form-control" placeholder="xxxx" name="ext_no" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="Mobile" class="text-bold-700">Mobile No</label>
+                                                        <input type="text" id="Mobile" maxlength="11" class="form-control" placeholder="018********" name="mobile_no" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 class="form-section"><i class="feather icon-eye"></i> Product Info</h4>
+                                            <div class="row">
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="ProductCategory" class="text-info text-bold-700"><a onclick="getProductCategoryList()" title="Refresh Product Category List">Select Product Category</a></label>
+                                                        <select id="ProductCategory" class="select2 form-control" name="product_category" required onchange="javascript:getProductSubCategoryByCategory(this)">
+                                                            <option value="">- - - Select Product Category - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="ProductSubCategory" class="text-bold-700">Select Product Sub-Category</label>
+                                                        <select id="ProductSubCategory" class="select2 form-control" name="product_sub_category" required onchange="javascript:getProductMasterList()">
+                                                            <option value="">- - - Select Product Sub-Category - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="ProductMaster" class="text-bold-700">Select Product</label>
+                                                        <select id="ProductMaster" class="select2 form-control" name="product_master" required>
+                                                            <option value="">- - - Select Product - - -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="Serial" class="text-bold-700">Serial No</label>
+                                                        <input type="text" id="Serial" maxlength="150" class="form-control" name="serial_no">
+                                                    </div>
+                                                </div>
+
+                                                &nbsp;
+                                                <div class="col-md-12">
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-actions right" id="form_actions">
+                                            {{--<button onclick="javascript:clearSerialNo()" class="btn btn-outline-danger">Clear Serial No's</button>--}}
+                                            <button type="submit" id="submit_button" class="btn btn-outline-primary">
+                                                <i class="feather icon-check"></i> Save
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="col-md-12 clone hide" {{--style="display: none !important;"--}}>
+        <div class="control-group input-group form-group" style="margin-top:10px">
+            <input id="SLNo" type="text" class="form-control secure" name="serial_no[]" required>
+            <div class="input-group-btn">
+                <button class="btn btn-danger imageRemove" type="button"><i class="fa fa-times"></i> Remove</button>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('page-modals')
+    {{--@include('layouts.common-modals.new-product-category-modal')
+    @include('layouts.common-modals.new-product-sub-category-modal')
+    @include('layouts.common-modals.new-manufacturer-modal')--}}
+@endsection
+
+@section('pageScripts')
+    {{--<script src="{{ asset('/stack-admin/app-assets/js/scripts/modal/components-modal.js') }}"></script>--}}
+    <script src="{{ asset('/js/custom/common.js') }}"></script>
+    <script src="{{ asset('/js/custom/back-end/submit-forms.js') }}"></script>
+    <script src="{{ asset('/js/barcode-scanner/on-scan.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+    @include('layouts.common-modal-js.new-factory-modal-js')
+    @include('layouts.common-modal-js.new-designation-modal-js')
+    @include('layouts.common-modal-js.new-department-modal-js')
+    @include('layouts.common-modal-js.new-purchase-product-modal-js')
+@endsection
+
+
+

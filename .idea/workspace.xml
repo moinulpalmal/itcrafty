@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/ProductIssue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductIssue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/issueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/issueType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/nav-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -158,6 +162,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "develop",
+    "last_opened_file_path": "E:/xampp/htdocs/itcrafty/resources/views/issue/old-entry",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -169,11 +174,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\itcrafty\resources\views\issue\old-entry" />
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\services\master" />
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\layouts\common-modals" />
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase\requisition" />
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase\warranty" />
-      <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\layouts\common-modal-js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\purchase" />
@@ -419,10 +424,11 @@
       <command value="artisan key:generate" />
       <command value="artisan make:middleware CheckIssue" />
       <command value="artisan make:model Model/ProductIssue -m" />
-      <command value="artisan config:cache" />
       <command value="artisan make:model Model/issueType -m" />
       <command value="artisan make:model Model/RequisitionProduct -m" />
       <command value="artisan migrate" />
+      <command value="artisan make:controller Issue/IssueController" />
+      <command value="artisan config:cache" />
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.ServiceHistory.php">
@@ -587,7 +593,7 @@
       <workItem from="1697001563564" duration="4445000" />
       <workItem from="1697082819433" duration="879000" />
       <workItem from="1697100825263" duration="484000" />
-      <workItem from="1697257127866" duration="6137000" />
+      <workItem from="1697257127866" duration="14344000" />
     </task>
     <servers />
   </component>

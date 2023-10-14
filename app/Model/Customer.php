@@ -238,4 +238,18 @@ class Customer extends Model
     public static function getCustomerContactInfo($id){
 
     }
+
+    public static function returnCustomerId($employee_id){
+        $data = DB::table('customers')
+            ->select('id')
+            ->where('employee_id', '=', $employee_id)
+            ->where('status', '!=', 'D')
+            ->get();
+
+        if($data->count() > 0){
+            return $data[0]->id;
+        }
+
+        return '-1';
+    }
 }
