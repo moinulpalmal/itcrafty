@@ -137,6 +137,19 @@
                 </ul>
             </li>
             @endif
+
+            @if(Auth::user()->hasPermission('issue', Auth::user()->id))
+                <li class="dropdown nav-item {{ (request()->is('issue*')) ? 'active' : '' }}" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-cart-plus"></i><span data-i18n="Purchase">Issue</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu {{ (request()->is('issue/old*')) ? 'active' : '' }}" data-menu="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" data-i18n="Warranty" data-toggle="dropdown">Old</a>
+                            <ul class="dropdown-menu">
+                                <li class="{{ (request()->is('issue/old/entry')) ? 'active' : '' }}" data-menu=""><a class="dropdown-item" href="{{route('purchase.warranty.service-requested')}}" data-i18n="Requested Service" data-toggle="dropdown">Individual Issue Form</a></li>
+                            </ul>
+
+
+                    </ul>
+                </li>
+            @endif
         </ul>
     </div>
     <!-- /horizontal menu content-->

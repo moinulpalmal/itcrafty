@@ -313,6 +313,11 @@ Route::group(['as' => 'services.','prefix' => 'services','namespace' => 'Service
     });
 });
 
+Route::group(['as' => 'issue.','prefix' => 'issue','namespace' => 'Issue','middleware' => ['auth', 'issue']] , function(){
+    Route::get('old/entry', 'IssueController@oldEntry')->name('old.entry');
+    Route::get('old/list', 'IssueController@oldEntry')->name('old.list');
+});
+
 Route::group(['as' => 'purchase.','prefix' => 'purchase','namespace' => 'Purchase','middleware' => ['auth', 'purchase']] , function(){
     Route::get('product/new', 'ProductDetailController@new')->name('product.new');
     Route::post('product/save', 'ProductDetailController@save')->name('product.save');
