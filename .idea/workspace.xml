@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="" />
+    <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_10_10_23__9_50_AM.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Tool_based_on_Symfony_Console_3_2_22__5_33_PM_artisan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Tool_based_on_Symfony_Console_10_9_23__2_13_PM_artisan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eab6c6c9-f8d0-4799-90d7-e2d0780e49d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eab6c6c9-f8d0-4799-90d7-e2d0780e49d4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smartcal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/smartcal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +31,13 @@
       </list>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="E:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
@@ -138,20 +157,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/services/master" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.zend.framework.tool&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PlaMal Web Apps\Laravel\7_X\itcrafty\resources\views\services\master" />
@@ -288,7 +309,6 @@
       <command value="artisan make:migration add_color_to_fabric_purchase_order_details_table" />
       <command value="artisan make:model Model/DeliveryLocationDetail -m" />
       <command value="artisan make:migration add_delivery_location_detail_id_to_purchase_order_masters_table" />
-      <command value="artisan key:generate" />
       <command value="artisan make:middleware CheckCreateBuyer" />
       <command value="artisan make:controller Admin/StyleDepartmentController" />
       <command value="artisan make:migration add_b_name_to_buyers_table" />
@@ -317,7 +337,6 @@
       <command value="artisan make:migration add_is_main_to_style_images_table" />
       <command value="artisan make:controller Merchandising/StyleBankStoreController" />
       <command value="artisan make:middleware CheckMerchandising" />
-      <command value="artisan" />
       <command value="artisan make:middleware CheckEditStyle" />
       <command value="artisan make:controller Merchandising/StyleBankController" />
       <command value="artisan make:model Model/Factory -m" />
@@ -401,9 +420,11 @@
       <command value="artisan make:controller Purchase/PurchaseRequsitionController" />
       <command value="artisan migrate:rollback" />
       <command value="artisan make:migration add_edit_access_info_to_service_masters_table" />
-      <command value="artisan migrate" />
-      <command value="artisan config:cache" />
       <command value="artisan serve" />
+      <command value="artisan" />
+      <command value="artisan key:generate" />
+      <command value="artisan config:cache" />
+      <command value="artisan migrate" />
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.ServiceHistory.php">
@@ -420,6 +441,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -561,44 +583,16 @@
       <workItem from="1633491744547" duration="6457000" />
       <workItem from="1638850697365" duration="4812000" />
       <workItem from="1646220806415" duration="653000" />
+      <workItem from="1696836566744" duration="9755000" />
+      <workItem from="1696909805022" duration="5599000" />
+      <workItem from="1696997196262" duration="1092000" />
+      <workItem from="1697001563564" duration="4445000" />
+      <workItem from="1697082819433" duration="879000" />
+      <workItem from="1697100825263" duration="484000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="739" y="258" key="FileChooserDialogImpl" timestamp="1646220838342">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="739" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1646220838342" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1646223889083">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1646223889083">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1646223889067">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889067" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1646223889083">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1646223889083" />
-    <state x="461" y="161" key="SettingsEditor" timestamp="1646220858455">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="461" y="161" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1646220858455" />
-    <state x="716" y="361" key="SymfonyComponentCompositeDataDialog" timestamp="1646220839092">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="716" y="361" key="SymfonyComponentCompositeDataDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1646220839092" />
-    <state x="616" y="238" width="672" height="672" key="run.anything.popup" timestamp="1646220866814">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="616" y="238" width="672" height="672" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1646220866814" />
+    <option name="version" value="3" />
   </component>
 </project>
