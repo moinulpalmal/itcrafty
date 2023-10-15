@@ -132,4 +132,8 @@ class CustomerController extends Controller
         }
         return Customer::getDropDownList($factory, $department);
     }
+
+    public function editByEmpId(Request $request){
+        return Customer::returnDetailByEmpId(trim($request->employee_id));
+    }
 }

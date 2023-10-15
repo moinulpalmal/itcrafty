@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Issue/IssueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Issue/IssueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/ProductDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductDetail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/ProductIssue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductIssue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/issueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/issueType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/nav-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,23 +156,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "E:/xampp/htdocs/itcrafty/resources/views/issue/old-entry",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php.zend.framework.tool",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/xampp/htdocs/itcrafty/resources/views/issue/old-entry&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.zend.framework.tool&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\itcrafty\resources\views\issue\old-entry" />
@@ -417,7 +418,6 @@
       <command value="artisan make:migration add_requisition_received_info_to_service_masters_table" />
       <command value="artisan make:migration add_requisition_update_info_to_requisitions_table" />
       <command value="artisan make:controller Purchase/PurchaseRequsitionController" />
-      <command value="artisan migrate:rollback" />
       <command value="artisan make:migration add_edit_access_info_to_service_masters_table" />
       <command value="artisan serve" />
       <command value="artisan" />
@@ -426,8 +426,10 @@
       <command value="artisan make:model Model/ProductIssue -m" />
       <command value="artisan make:model Model/issueType -m" />
       <command value="artisan make:model Model/RequisitionProduct -m" />
-      <command value="artisan migrate" />
       <command value="artisan make:controller Issue/IssueController" />
+      <command value="artisan make:migration add_designation_id_at_usres_table --table=users" />
+      <command value="artisan migrate:rollback" />
+      <command value="artisan migrate" />
       <command value="artisan config:cache" />
     </option>
   </component>
@@ -593,7 +595,8 @@
       <workItem from="1697001563564" duration="4445000" />
       <workItem from="1697082819433" duration="879000" />
       <workItem from="1697100825263" duration="484000" />
-      <workItem from="1697257127866" duration="14344000" />
+      <workItem from="1697257127866" duration="14464000" />
+      <workItem from="1697340779628" duration="11018000" />
     </task>
     <servers />
   </component>

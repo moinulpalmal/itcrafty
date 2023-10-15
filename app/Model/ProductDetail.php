@@ -173,6 +173,28 @@ class ProductDetail extends Model
         return '0';
     }
 
+    public static function insertProductDetailOld($request){
+        $model = new ProductDetail();
+
+        $model->product_master = $request->product_master;
+        //$model->vendor = $request->vendor;
+
+        //$model->old_name = $request->old_name;
+       // $model->old_vendor = $request->old_vendor;
+       // $model->old_purchase_date = $request->old_purchase_date;
+        $model->sl_no = $request->serial_no;
+
+        $model->purchase_date = $request->purchase_date;
+        $model->warranty_in_months = $request->warranty_in_months;
+
+        $model->inserted_by = Auth::id();
+        $model->status = 'A';
+        if($model->save()){
+            return $model->id;
+        }
+        return '0';
+    }
+
     public static function insertNewProductDetail($product){
         $model = new ProductDetail();
 

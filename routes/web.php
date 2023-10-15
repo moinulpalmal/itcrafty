@@ -176,6 +176,7 @@ Auth::routes();
             Route::get('employee', 'CustomerController@index')->name('employee');
             Route::post('employee/save', 'CustomerController@save')->name('employee.save');
             Route::post('employee/edit', 'CustomerController@edit')->name('employee.edit');
+            Route::post('employee/info-by-emp-id', 'CustomerController@editByEmpId')->name('employee.info-by-emp-id');
             Route::delete('employee/delete', 'CustomerController@delete')->name('employee.delete');
             Route::delete('employee/activate', 'CustomerController@activate')->name('employee.activate');
             Route::delete('employee/de-activate', 'CustomerController@deActivate')->name('employee.de-activate');

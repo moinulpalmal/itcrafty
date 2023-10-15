@@ -51,10 +51,16 @@
                                 <div class="card-body card-dashboard">
                                     <form class="form" id="ProductIssueForm" method="post" action="#">
                                         @csrf
-                                        <input type="hidden" id="HiddenFactoryID" class="form-control" name="id" >
                                         <div class="form-body">
                                             <h4 class="form-section"><i class="feather icon-eye"></i> Employee Info</h4>
                                             <div class="row">
+                                                <div class="col-md-3 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="CustomerID" class="text-bold-700">Employee ID</label>
+                                                        <input type="text" id="CustomerCode" maxlength="20" class="form-control" placeholder="Enter Employee ID" name="employee_id" required onkeyup="javascript: getCustomerInfo(this)">
+                                                        <input type="hidden" id="CustomerID" class="form-control" name="customer_id">
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="Factory" class=""><a class="text-info text-bold-700" onclick=" $('#NewFactory').modal({backdrop: 'static', keyboard: false});" data-toggle="modal" {{--data-target="#NewFactory"--}} title="Add New Factory">Select Factory</a>
@@ -77,7 +83,7 @@
                                                     <div class="form-group">
                                                         <label for="Department" class=""><a class="text-info text-bold-700" onclick="$('#NewDepartment').modal({backdrop: 'static', keyboard: false});" data-toggle="modal" {{--data-target="#NewDepartment"--}} title="Add New Designation">Select Department</a>
                                                         </label>
-                                                        <select id="Department" class="select2 form-control" name="department">
+                                                        <select id="Department" class="select2 form-control" name="department" required>
                                                             <option value="">- - - Select  Department - - -</option>
                                                         </select>
                                                     </div>
@@ -88,16 +94,11 @@
                                                         <input type="text" id="JobLocation" maxlength="150" class="form-control" placeholder="Enter Job Location" name="job_location">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 no-padding" >
-                                                    <div class="form-group">
-                                                        <label for="CustomerID" class="text-bold-700">Employee ID</label>
-                                                        <input type="text" id="CustomerID" maxlength="20" class="form-control" placeholder="Enter Employee ID" name="employee_id" required>
-                                                    </div>
-                                                </div>
                                                 <div class="col-md-3 no-padding" >
                                                     <div class="form-group">
                                                         <label for="CustomerName" class="text-bold-700">Employee Name</label>
                                                         <input type="text" id="CustomerName" maxlength="255" class="form-control" placeholder="Enter Customer Name" name="name" required>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 no-padding" >
@@ -106,16 +107,16 @@
                                                         <input type="email" id="EmailAddress" maxlength="150" class="form-control" placeholder="xyz@palmalgarments.com" name="email">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 no-padding" >
+                                                <div class="col-md-3 no-padding" >
                                                     <div class="form-group">
                                                         <label for="ExtNo" class="text-bold-700">Extension No</label>
                                                         <input type="text" id="ExtNo" maxlength="4" class="form-control" placeholder="xxxx" name="ext_no" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 no-padding" >
+                                                <div class="col-md-3 no-padding" >
                                                     <div class="form-group">
                                                         <label for="Mobile" class="text-bold-700">Mobile No</label>
-                                                        <input type="text" id="Mobile" maxlength="11" class="form-control" placeholder="018********" name="mobile_no" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                                        <input type="text" id="Mobile" maxlength="11" class="form-control" placeholder="018********" name="mobile_no" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +125,7 @@
                                                 <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="ProductCategory" class="text-info text-bold-700"><a onclick="getProductCategoryList()" title="Refresh Product Category List">Select Product Category</a></label>
-                                                        <select id="ProductCategory" class="select2 form-control" name="product_category" required onchange="javascript:getProductSubCategoryByCategory(this)">
+                                                        <select id="ProductCategory" class="select2 form-control" name="product_category" required onchange="javascript:getProductSubCategoryByCategory(this)" required>
                                                             <option value="">- - - Select Product Category - - -</option>
                                                         </select>
                                                     </div>
@@ -132,12 +133,12 @@
                                                 <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="ProductSubCategory" class="text-bold-700">Select Product Sub-Category</label>
-                                                        <select id="ProductSubCategory" class="select2 form-control" name="product_sub_category" required onchange="javascript:getProductMasterList()">
+                                                        <select id="ProductSubCategory" class="select2 form-control" name="product_sub_category" required onchange="javascript:getProductMasterList()" required>
                                                             <option value="">- - - Select Product Sub-Category - - -</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 no-padding">
+                                                <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="ProductMaster" class="text-bold-700">Select Product</label>
                                                         <select id="ProductMaster" class="select2 form-control" name="product_master" required>
@@ -145,14 +146,69 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 no-padding" >
+
+
+                                                <div class="col-md-3 no-padding" >
                                                     <div class="form-group">
                                                         <label for="Serial" class="text-bold-700">Serial No</label>
                                                         <input type="text" id="Serial" maxlength="150" class="form-control" name="serial_no">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="PurchaseDate" class="text-bold-700">Purchase Date</label>
+                                                        <input type="date" id="PurchaseDate" class="form-control" name="purchase_date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="Warranty" class="text-bold-700">Warranty In Months</label>
+                                                        <input type="number" min="0" id="Warranty" class="form-control" name="warranty_in_months" value="0">
+                                                    </div>
+                                                </div>
 
-                                                &nbsp;
+                                                <div class="col-md-12">
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <h4 class="form-section"><i class="feather icon-eye"></i> Issue Info</h4>
+                                            <div class="row">
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="IssuType" class="text-bold-700">Select Issue Types</label>
+                                                        <select id="IssuType" class="select2 form-control" name="issue_type" required>
+                                                            <option value="">- - - Select Product - - -</option>
+                                                            @foreach($issue_types AS $issue_type)
+                                                                <option value="{{$issue_type->id}}">{{$issue_type->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="ReqNo" class="text-bold-700">Requisition No</label>
+                                                        <input type="text" id="Serial" maxlength="150" class="form-control" name="reference_no" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 no-padding">
+                                                    <div class="form-group">
+                                                        <label for="IssueDate" class="text-bold-700">Issue Date</label>
+                                                        <input type="date" id="Serial" class="form-control" name="issue_date" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="IssueDescription" class="text-bold-700">Issue Description</label>
+                                                        <input type="text" id="IssueDescription" maxlength="150" class="form-control" name="issue_description">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding" >
+                                                    <div class="form-group">
+                                                        <label for="Remarks" class="text-bold-700">Remarks</label>
+                                                        <input type="text" id="Remarks" maxlength="150" class="form-control" name="remarks">
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-12">
                                                     <br>
                                                     <br>
@@ -196,11 +252,94 @@
     <script src="{{ asset('/js/custom/common.js') }}"></script>
     <script src="{{ asset('/js/custom/back-end/submit-forms.js') }}"></script>
     <script src="{{ asset('/js/barcode-scanner/on-scan.min.js') }}"></script>
-    <script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>--}}
     @include('layouts.common-modal-js.new-factory-modal-js')
     @include('layouts.common-modal-js.new-designation-modal-js')
     @include('layouts.common-modal-js.new-department-modal-js')
     @include('layouts.common-modal-js.new-purchase-product-modal-js')
+    <script>
+        $(function(){
+            $.ajaxSetup({
+                headers: { 'X-CSRF-TOKEN' : '{{ csrf_token() }}' }
+            });
+            $('#ProductIssueForm').submit(function(e){
+                e.preventDefault();
+                /* for ( instance in CKEDITOR.instances ) {
+                     CKEDITOR.instances[instance].updateElement();
+                 }*/
+                var data = $(this).serialize();
+                var id = $('#HiddenFactoryID').val();
+                var url = '{{ route('issue.old.entry.save') }}';
+                //console.log(data);
+                $.ajax({
+                    url: url,
+                    method:'POST',
+                    data:data,
+                    success:function(data){
+                     //   console.log(data);
+                       // return;
+                        if(data === '2')
+                        {
+                            swalUpdateSuccessfulWithRefresh();
+                        }
+                        else if(data === '1')
+                        {
+                            swalInsertSuccessfulWithRefresh();
+                        }
+                        else if(data === '0'){
+                            swalDataNotSaved();
+                        }
+                        else{
+                            swalDataNotSaved();
+                        }
+                    },
+                    error:function(error){
+                        swalError(error);
+                    }
+                })
+
+            })
+        });
+
+        function getCustomerInfo(_value) {
+          //  console.log(_value.value);
+            //return;
+            if(_value.value){
+                var url = '<?php echo e(route('settings.employee.info-by-emp-id')); ?>';
+                $.ajax({
+                    url: url,
+                    method:'POST',
+                    data:{employee_id: _value.value, _token: '<?php echo e(csrf_token()); ?>'},
+                    success:function(data){
+                        $('input[name=job_location]').val(data.job_location);
+                        $('input[name=name]').val(data.name);
+                        $('input[name=email]').val(data.email);
+                        $('input[name=mobile_no]').val(data.mobile_no);
+                        $('input[name=ext_no]').val(data.ext_no);
+                        $('input[name=customer_id]').val(data.id);
+                        $('select[name=factory]').val(data.factory).change();
+                        $('select[name=designation]').val(data.designation).change();
+                        $('select[name=department]').val(data.department).change();
+                       // console.log(data);
+                        //    return;
+
+                    },
+                    error:function(error){
+                        $('input[name=job_location]').val('');
+                        $('input[name=email]').val('');
+                        $('input[name=mobile_no]').val('');
+                        $('input[name=ext_no]').val('');
+                    }
+                })
+            }
+            else{
+                $('input[name=job_location]').val('');
+                $('input[name=email]').val('');
+                $('input[name=mobile_no]').val('');
+                $('input[name=ext_no]').val('');
+            }
+        }
+    </script>
 @endsection
 
 

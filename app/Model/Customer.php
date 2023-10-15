@@ -133,6 +133,7 @@ class Customer extends Model
     }
 
     public static function returnForEdit($id){
+
         $model = Customer::find($id);
         if($model != null){
             $data = array(
@@ -150,6 +151,51 @@ class Customer extends Model
             return $data;
         }
         return '0';
+
+    }
+
+    public static function returnDetailByEmpId($emp_id){
+        $id = 0;
+        $data = DB::table('customers')
+            ->select('id')
+            ->where('status', '=', 'A')
+            ->where('employee_id', '=', $emp_id)
+            ->get();
+
+        if($data->count() > 0){
+            $id = $data[0]->id;
+        }
+
+        $model = Customer::find($id);
+
+        if($model != null){
+            $data = array(
+                'employee_id' => $model->employee_id,
+                'factory' => $model->factory,
+                'designation' => $model->designation,
+                'department' => $model->department,
+                'job_location' => $model->job_location,
+                'name' => $model->name,
+                'email' => $model->email,
+                'mobile_no' => $model->mobile_no,
+                'ext_no' => $model->ext_no,
+                'id' => $model->id
+            );
+            return $data;
+        }
+        $data = array(
+            'employee_id' => '',
+            'factory' => '',
+            'designation' =>'',
+            'department' => '',
+            'job_location' => '',
+            'name' => '',
+            'email' => '',
+            'mobile_no' => '',
+            'ext_no' => '',
+            'id' => '',
+        );
+        return $data;
 
     }
 
