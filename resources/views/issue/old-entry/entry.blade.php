@@ -188,13 +188,13 @@
                                                 <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="ReqNo" class="text-bold-700">Requisition No</label>
-                                                        <input type="text" id="Serial" maxlength="150" class="form-control" name="reference_no" required>
+                                                        <input type="text" id="Serial" maxlength="150" class="form-control" name="reference_no">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 no-padding">
                                                     <div class="form-group">
                                                         <label for="IssueDate" class="text-bold-700">Issue Date</label>
-                                                        <input type="date" id="Serial" class="form-control" name="issue_date" required>
+                                                        <input type="date" id="Serial" class="form-control" name="issue_date">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 no-padding" >
