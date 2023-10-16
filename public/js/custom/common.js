@@ -190,6 +190,23 @@ function swalError(_error) {
     });
 }
 
+
+function returnSelected(_value) {
+    var result = [];
+    var options = _value && _value.options;
+    var opt;
+    //return options.length;
+    result.push(0);
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+        opt = options[i];
+
+        if (opt.selected) {
+            result.push(parseInt(opt.value));
+        }
+    }
+    return result;
+}
+
 function resetCkeditor(_name, _id) {
     let editor = CKEDITOR.instances[_name];
     let str = '#';
@@ -216,4 +233,16 @@ function fillCkeditorWithValue(_name, _id, _value) {
     CKEDITOR.replace(_name,{
         uiColor: '#CCEAEE'
     });
+}
+
+function buttonDisable(_id) {
+    let symbol = "#";
+    let selector = symbol.concat(_id);
+    $(selector).prop('disabled', true);
+}
+
+function buttonEnable(_id) {
+    let symbol = "#";
+    let selector = symbol.concat(_id);
+    $(selector).prop('disabled', false);
 }

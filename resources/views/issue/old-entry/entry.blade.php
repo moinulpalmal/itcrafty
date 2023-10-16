@@ -268,7 +268,7 @@
                      CKEDITOR.instances[instance].updateElement();
                  }*/
                 var data = $(this).serialize();
-                var id = $('#HiddenFactoryID').val();
+                buttonDisable('submit_button');
                 var url = '{{ route('issue.old.entry.save') }}';
                 //console.log(data);
                 $.ajax({
@@ -284,17 +284,37 @@
                         }
                         else if(data === '1')
                         {
-                            swalInsertSuccessfulWithRefresh();
+                            //swalInsertSuccessfulWithRefresh();
+                            swal({
+                                title: 'Operation Successfully!',
+                                text: 'Do you want to add another product againts this user?',
+                                icon: 'warning',
+                                closeOnClickOutside: false,
+                                closeOnEsc: false,
+                                buttons: ["Cancel", "Yes!"],
+                            }).then(function(value) {
+                                if (value) {
+                                    buttonEnable('submit_button');
+                                    clearIssueInfo();
+                                    clearProductSection();
+                                }else{
+                                    clearFormWithoutDelay('ProductIssueForm');
+                                    buttonEnable('submit_button');
+                                }
+                            });
                         }
                         else if(data === '0'){
                             swalDataNotSaved();
+                            buttonEnable('submit_button');
                         }
                         else{
                             swalDataNotSaved();
+                            buttonEnable('submit_button');
                         }
                     },
                     error:function(error){
                         swalError(error);
+                        buttonEnable('submit_button');
                     }
                 })
 
@@ -326,18 +346,46 @@
                     },
                     error:function(error){
                         $('input[name=job_location]').val('');
+                        $('input[name=name]').val('');
                         $('input[name=email]').val('');
                         $('input[name=mobile_no]').val('');
                         $('input[name=ext_no]').val('');
+                        $('input[name=customer_id]').val('');
+                        $('select[name=factory]').val('').change();
+                        $('select[name=designation]').val('').change();
+                        $('select[name=department]').val('').change();
                     }
                 })
             }
             else{
                 $('input[name=job_location]').val('');
+                $('input[name=name]').val('');
                 $('input[name=email]').val('');
                 $('input[name=mobile_no]').val('');
                 $('input[name=ext_no]').val('');
+                $('input[name=customer_id]').val('');
+                $('select[name=factory]').val('').change();
+                $('select[name=designation]').val('').change();
+                $('select[name=department]').val('').change();
             }
+        }
+
+        function clearProductSection(){
+            $('select[name=issue_type]').val('').change();
+            $('select[name=product_master]').val('').change();
+            $('select[name=product_sub_category]').val('').change();
+            $('select[name=product_category]').val('').change();
+            $('input[name=serial_no]').val('');
+            $('input[name=purchase_date]').val('');
+            $('input[name=warranty_in_months]').val('');
+        }
+
+        function clearIssueInfo(){
+            $('select[name=issue_type]').val('').change();
+            $('input[name=reference_no]').val('').change();
+            $('input[name=issue_date]').val('');
+            $('input[name=issue_description]').val('');
+            $('input[name=remarks]').val('');
         }
     </script>
 @endsection
