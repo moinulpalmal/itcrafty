@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductIssue extends Model
 {
@@ -18,6 +19,8 @@ class ProductIssue extends Model
                 $result = Customer::insertCustomer($request);
             }
             $customer_id = Customer::returnCustomerId(trim($request->employee_id));
+        }else{
+            $result = Customer::updateCustomerById($request);
         }
 
        // return $request->all();
@@ -63,5 +66,21 @@ class ProductIssue extends Model
 
         return '0';
 
+    }
+
+    public static function allNotDeletedProductIssues(){
+        return DB::table('product_issues')
+            ->leftJoin('product_detail_id', 'product_details.id', '=', 'product_issues.product_detail_id')
+            ->leftJoin('product_master_id', 'product_masters.id', '=', 'product_issues.product_master_id')
+            ->leftJoin('product_categories', 'product_categories.id', '=', 'product_masters.product_sub_category_id')
+            ->leftJoin('product_sub_categories', 'product_sub_categories.id', '=', 'product_categories.product_category_id')
+            ->leftJoin('customers', 'customers.id', '=', 'product_issues.customer_id')
+            ->leftJoin('issue_types', 'product_masters.id', '=', 'product_issues.issue_type_id')
+           // ->leftJoin('issued_by', 'issued_bys.id', '=', 'product_issues.issued_by')
+            ->leftJoin('requisition_id', 'requisitions.id', '=', 'product_issues.requisition_id')
+            ->select('product_issues.id', 'product_categories.name AS product_category', 'product_sub_categories.name AS product_sub_category',
+            '')
+            ->where('product_issues.status', '!=', 'D')
+            ->get();
     }
 }

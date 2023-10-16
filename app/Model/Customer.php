@@ -132,6 +132,34 @@ class Customer extends Model
         return '0';
     }
 
+    public static function updateCustomerById($request){
+        $model = Customer::find($request->customer_id);
+        if($model != null){
+
+            $model->name = $request->name;
+            $model->employee_id = $request->employee_id;
+
+            $model->factory = $request->factory;
+            $model->designation = $request->designation;
+            $model->department = $request->department;
+
+            $model->job_location = $request->job_location;
+
+            $model->email = $request->email;
+            $model->mobile_no = $request->mobile_no;
+            $model->ext_no = $request->ext_no;
+
+            $model->last_updated_by = Auth::id();
+
+            if($model->save()){
+                return '2';
+            }
+            return '0';
+        }
+
+        return '0';
+    }
+
     public static function returnForEdit($id){
 
         $model = Customer::find($id);

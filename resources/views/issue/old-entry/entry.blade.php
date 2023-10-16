@@ -300,6 +300,7 @@
                                 }else{
                                     clearFormWithoutDelay('ProductIssueForm');
                                     buttonEnable('submit_button');
+                                    moveToTop();
                                 }
                             });
                         }
