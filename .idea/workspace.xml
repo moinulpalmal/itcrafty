@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/ProductIssue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductIssue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,6 +425,7 @@
       <command value="artisan make:migration add_designation_id_at_usres_table --table=users" />
       <command value="artisan migrate:rollback" />
       <command value="artisan migrate" />
+      <command value="artisan make:controller Issue/Api/IssueController" />
       <command value="artisan config:cache" />
     </option>
   </component>
@@ -593,7 +593,10 @@
       <workItem from="1697100825263" duration="484000" />
       <workItem from="1697257127866" duration="14464000" />
       <workItem from="1697340779628" duration="12430000" />
-      <workItem from="1697428831301" duration="12232000" />
+      <workItem from="1697428831301" duration="12846000" />
+      <workItem from="1697517686597" duration="6011000" />
+      <workItem from="1697688284731" duration="4262000" />
+      <workItem from="1697858801270" duration="8443000" />
     </task>
     <servers />
   </component>
