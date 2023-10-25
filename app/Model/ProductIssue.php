@@ -83,6 +83,7 @@ class ProductIssue extends Model
             ->leftJoin('requisitions', 'requisitions.id', '=', 'product_issues.requisition_id')
             ->select('product_issues.id',
                 'customers.name AS customer_name', 'customers.id AS customer_id', 'departments.name AS department_name',
+                'customers.job_location',
                 'factories.factory_name', 'factories.factory_short_name', 'designations.name AS designation',
                 'departments.name AS department', 'issue_types.name AS issue_type',
                 'product_categories.name AS product_category', 'product_sub_categories.name AS product_sub_category',
