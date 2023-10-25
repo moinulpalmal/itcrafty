@@ -318,6 +318,7 @@ Route::group(['as' => 'issue.','prefix' => 'issue','namespace' => 'Issue','middl
     Route::get('old/entry', 'IssueController@oldEntry')->name('old.entry');
     Route::post('old/entry/save', 'IssueController@oldEntrySave')->name('old.entry.save');
     Route::get('old/list', 'IssueController@oldList')->name('old.list');
+    Route::post('old/list/edit', 'IssueController@returnEdit')->name('old.list.edit');
 });
 
 Route::group(['as' => 'purchase.','prefix' => 'purchase','namespace' => 'Purchase','middleware' => ['auth', 'purchase']] , function(){

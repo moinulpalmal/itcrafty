@@ -82,13 +82,13 @@ class ProductIssue extends Model
            // ->leftJoin('issued_by', 'issued_bys.id', '=', 'product_issues.issued_by')
             ->leftJoin('requisitions', 'requisitions.id', '=', 'product_issues.requisition_id')
             ->select('product_issues.id',
-                'customers.name AS customer_name', 'customers.id AS customer_id', 'departments.name AS department_name',
+                'customers.name AS customer_name', 'customers.id AS customer_id',
                 'customers.job_location',
                 'factories.factory_name', 'factories.factory_short_name', 'designations.name AS designation',
                 'departments.name AS department', 'issue_types.name AS issue_type',
                 'product_categories.name AS product_category', 'product_sub_categories.name AS product_sub_category',
                 'product_masters.name AS product_master', 'product_details.sl_no', 'product_details.purchase_date',
-                'product_details.purchase_date', 'product_details.warranty_in_months',
+                'product_details.warranty_in_months',
                 'product_issues.issue_date', 'product_issues.release_date', 'product_issues.issue_description',
                 'product_issues.reference_no', 'product_issues.remarks', 'product_issues.status')
             ->where('product_issues.status', '!=', 'D')

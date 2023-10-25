@@ -3,7 +3,7 @@
     Add New Issue
 @endsection
 @section('content')
-    <style type="text/css">
+  {{--  <style type="text/css">
         .hide{
             display: none;
         }
@@ -12,7 +12,7 @@
             background-color: #0689bd;
             color: white;
         }
-    </style>
+    </style>--}}
     <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="content-header row">
@@ -229,7 +229,7 @@
                     </div>
                 </div>
             </section>
-            section id="configuration">
+            <section id="configuration">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -239,13 +239,14 @@
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li><a data-action="collapse" title="minimize"><i class="feather icon-minus"></i></a></li>
+                                    <li><a data-action="reload" onclick="" id="DataTableButton"><i class="feather icon-rotate-cw"></i></a></li>
                                     <li><a data-action="expand" title="maximize"><i class="feather icon-maximize"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
-                                <table id="social-media-table" class="table table-striped table-bordered table-condensed social-media table-info">
+                                <table id="social-media-table" class="table table-striped table-bordered table-responsive table-condensed social-media table-info">
                                     <thead>
                                         <tr>
                                             <th class="text-center">Action</th>
@@ -327,6 +328,379 @@
     @include('layouts.common-modal-js.new-department-modal-js')
     @include('layouts.common-modal-js.new-purchase-product-modal-js')
     <script>
+
+        var dataTable = $('.social-media').DataTable({
+            dom: 'Bfrtip',
+            pagingType: 'full_numbers',
+            className: 'my-1',
+            lengthMenu: [
+                [ 10, 25, 50, 100, -1 ],
+                [ '10 rows', '25 rows', '50 rows', '100 rows', 'Show all' ]
+            ],
+            buttons: [
+                {
+                    extend: 'copyHtml5',
+                    fieldSeparator: '\t',
+                    extension: '.tsv',
+                    exportOptions: {
+                        columns: [ 0, ':visible' ]
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [ 0, ':visible' ]
+                    }
+                },
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: [ 0, ':visible' ]
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    orientation: 'portrait',
+                    pageSize: 'A4',
+                    exportOptions: {
+                        columns: [ 0, ':visible' ]
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [ 0, ':visible' ]
+                    },
+                    customize: function(win)
+                    {
+                        var css = '@page { size: landscape; }',
+                            head = win.document.head || win.document.getElementsByTagName('head')[0],
+                            style = win.document.createElement('style');
+
+                        style.type = 'text/css';
+                        style.media = 'print';
+
+                        if (style.styleSheet)
+                        {
+                            style.styleSheet.cssText = css;
+                        }
+                        else
+                        {
+                            style.appendChild(win.document.createTextNode(css));
+                        }
+
+                        head.appendChild(style);
+                    }
+                },
+                'colvis',
+                'pageLength'
+            ]
+        });
+
+        $(document).ready(function () {
+          //  loadDataTable();
+        });
+
+        function returnStringFormatDate(_date) {
+            let targetDate = Date.parse(_date);
+            let currentDate = new Date(targetDate);
+            return currentDate.toDateString();
+            //return targetDate.('en')
+        }
+        function numberWithCommas(num) {
+            num1 = num;
+            obj1 = new Intl.NumberFormat('en-US');
+            output1 = obj1.format(num1);
+
+            return output1;
+        }
+
+        function hitTableRefresh() {
+            document.getElementById("DataTableButton").click();
+        }
+
+
+
+        function makeTableSearchAble(){
+            $('.social-media tfoot th').each( function () {
+                var title = $(this).text();
+                $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+            } );
+
+            dataTable.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+
+
+        function loadDataTable() {
+            dataTable.destroy();
+            var free_table = '<tr><td class="text-center" colspan="17">--- Please Wait... Loading Data  ----</td></tr>';
+            $('.social-media').find('tbody').append(free_table);
+
+            dataTable = $('.social-media').DataTable({
+                ajax: {
+                    url: "/mexport/public/api/issue/all/" ,
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        /*data: "id",*/
+                        render: function(data, type, api_item) {
+                            if(api_item.status === "A"){
+                                return "<p class='text-center'><a title= 'Show Detail' class= 'ShowDetail btn btn-info btn-sm btn-round fa fa-eye' data-id = "+ api_item.id +"></a></p>";
+                            }
+                            else{
+                                return "<p class='text-center'></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.customer_name === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.customer_name +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.designation === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.designation +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.factory_short_name === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.factory_short_name +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.department === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.department +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.job_location === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left'><strong>"+ api_item.job_location +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_type === null){
+
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.issue_type +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_date === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.issue_date) +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.release_date === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.release_date) +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.reference_no === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.reference_no +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_description === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.issue_description +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.product_category === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.product_category +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.product_sub_category === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.product_sub_category +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.product_master === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.product_master +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.sl_no === null){
+                                return "<p class = 'text-center'></p>";
+                            }else{
+                                return "<p class = 'text-center'>"+ api_item.sl_no +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.purchase_date === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.purchase_date) +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.warranty_in_months === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.warranty_in_months +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.remarks === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.remarks +"</p>";
+                            }
+                        }
+                    }
+                ],
+                dom: 'Bfrtip',
+                pagingType: 'full_numbers',
+                className: 'my-1',
+                lengthMenu: [
+                    [ 10, 25, 50, 100, -1 ],
+                    [ '10 rows', '25 rows', '50 rows', '100 rows', 'Show all' ]
+                ],
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        fieldSeparator: '\t',
+                        extension: '.tsv',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'csvHtml5',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        orientation: 'portrait',
+                        pageSize: 'A4',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        },
+                        customize: function(win)
+                        {
+                            var css = '@page { size: landscape; }',
+                                head = win.document.head || win.document.getElementsByTagName('head')[0],
+                                style = win.document.createElement('style');
+
+                            style.type = 'text/css';
+                            style.media = 'print';
+
+                            if (style.styleSheet)
+                            {
+                                style.styleSheet.cssText = css;
+                            }
+                            else
+                            {
+                                style.appendChild(win.document.createTextNode(css));
+                            }
+
+                            head.appendChild(style);
+                        }
+                    },
+                    'colvis',
+                    'pageLength'
+                ]
+            });
+
+            makeTableSearchAble();
+        }
+
+        $('#social-media-table').on('click',".ShowDetail", function(){
+            var button = $(this);
+            var id = button.attr("data-id");
+            var url = '{{ route('issue.old.list.edit') }}';
+           // url = url.replace('pid', id);
+            window.open(url, "_blank");
+        });
+
         $(function(){
             $.ajaxSetup({
                 headers: { 'X-CSRF-TOKEN' : '{{ csrf_token() }}' }
