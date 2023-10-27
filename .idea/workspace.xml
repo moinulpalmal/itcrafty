@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/ProductIssue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductIssue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -428,6 +425,7 @@
       <command value="artisan migrate" />
       <command value="artisan make:controller Issue/Api/IssueController" />
       <command value="artisan config:cache" />
+      <command value="artisan make:migration add_old_data_customers_table --table=customers" />
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.ServiceHistory.php">
@@ -601,7 +599,8 @@
       <workItem from="1697885300629" duration="595000" />
       <workItem from="1698036094902" duration="3840000" />
       <workItem from="1698119994265" duration="5059000" />
-      <workItem from="1698210741892" duration="5961000" />
+      <workItem from="1698210741892" duration="6422000" />
+      <workItem from="1698385341206" duration="860000" />
     </task>
     <servers />
   </component>
