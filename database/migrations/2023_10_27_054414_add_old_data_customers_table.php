@@ -14,9 +14,10 @@ class AddOldDataCustomersTable extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->string('old_designation')->unsigned()->nullable();
-            $table->string('old_departments')->unsigned()->nullable();
-            $table->string('old_designation')->unsigned()->nullable();
+            $table->string('old_designation', 255)->nullable();
+            $table->string('old_department', 255)->nullable();
+            $table->string('old_section', 255)->nullable();
+            $table->string('old_division', 255)->nullable();
         });
     }
 
@@ -28,7 +29,10 @@ class AddOldDataCustomersTable extends Migration
     public function down()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->dropColumn('designation_id');
+            $table->dropColumn('old_designation');
+            $table->dropColumn('old_department');
+            $table->dropColumn('old_section');
+            $table->dropColumn('old_division');
         });
     }
 }
