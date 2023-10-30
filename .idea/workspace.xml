@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Designation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Designation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2023_10_27_054414_add_old_data_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_10_27_054414_add_old_data_customers_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -422,11 +426,11 @@
       <command value="artisan make:model Model/RequisitionProduct -m" />
       <command value="artisan make:controller Issue/IssueController" />
       <command value="artisan make:migration add_designation_id_at_usres_table --table=users" />
-      <command value="artisan migrate:rollback" />
       <command value="artisan make:controller Issue/Api/IssueController" />
       <command value="artisan make:migration add_old_data_customers_table --table=customers" />
-      <command value="artisan config:cache" />
+      <command value="artisan migrate:rollback" />
       <command value="artisan migrate" />
+      <command value="artisan config:cache" />
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.ServiceHistory.php">
@@ -603,7 +607,7 @@
       <workItem from="1698210741892" duration="6422000" />
       <workItem from="1698385341206" duration="860000" />
       <workItem from="1698635689306" duration="1156000" />
-      <workItem from="1698640407066" duration="755000" />
+      <workItem from="1698640407066" duration="4509000" />
     </task>
     <servers />
   </component>

@@ -129,4 +129,18 @@ class Designation extends Model
         //return $DropDownData;
         //return json_encode($DropDownData);
     }
+
+    public static function returnIDByName($name){
+        $data =  DB::table('designations')
+            ->select('id')
+            ->where('name', '=', $name)
+            ->orderBy('name', 'ASC')
+            ->get();
+
+        if($data->count() > 0){
+            return $data[0]->id;
+        }
+        return 0;
+
+    }
 }

@@ -49,11 +49,12 @@ class Customer extends Model
 
     public static function allNotDeleteCustomers(){
         return DB::table('customers')
-            ->join('factories', 'factories.id', '=', 'customers.factory')
+            ->leftjoin('factories', 'factories.id', '=', 'customers.factory')
             ->leftjoin('designations', 'designations.id', '=', 'customers.designation')
             ->leftjoin('departments', 'departments.id', '=', 'customers.department')
             ->select('customers.id', 'customers.employee_id','customers.name',
                 'customers.email', 'customers.mobile_no', 'customers.ext_no', 'customers.status',
+                'customers.old_designation', 'customers.old_department',
                 'designations.name AS designation', 'factories.factory_name AS factory', 'departments.name AS department')
             ->where('customers.status', '!=', 'D')
             ->orderBy('factories.factory_name', 'ASC')

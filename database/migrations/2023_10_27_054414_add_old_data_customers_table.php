@@ -18,6 +18,7 @@ class AddOldDataCustomersTable extends Migration
             $table->string('old_department', 255)->nullable();
             $table->string('old_section', 255)->nullable();
             $table->string('old_division', 255)->nullable();
+            $table->date('joining_date')->nullable();
         });
     }
 
@@ -33,6 +34,7 @@ class AddOldDataCustomersTable extends Migration
             $table->dropColumn('old_department');
             $table->dropColumn('old_section');
             $table->dropColumn('old_division');
+            $table->dropColumn('joining_date');
         });
     }
 }

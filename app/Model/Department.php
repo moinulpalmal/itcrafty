@@ -129,5 +129,20 @@ class Department extends Model
             ->get();
     }
 
+    public static function returnIDByName($name){
+       $data =  DB::table('departments')
+            ->select('id')
+           ->where('name', '=', $name)
+            ->orderBy('name', 'ASC')
+            ->get();
+
+       if($data->count() > 0){
+           return $data[0]->id;
+       }
+
+       return 0;
+
+    }
+
 
 }

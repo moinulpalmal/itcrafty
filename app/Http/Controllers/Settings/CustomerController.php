@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Imports\BuyerImports;
 use App\Model\Customer;
 use App\Model\Department;
+use App\Model\Designation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
@@ -14,6 +15,19 @@ class CustomerController extends Controller
 {
     public function index(){
         //return $this->oldData();
+       /* $customers =  DB::table('customers')
+            ->select('id')
+            ->where('designation', null)
+            ->get();
+       // $customers =
+        foreach ($customers AS $customer){
+            $customer = Customer::find($customer->id);
+
+            $customer->department = Department::returnIDByName($customer->old_department);
+            $customer->designation = Designation::returnIDByName($customer->old_designation);
+
+            $customer->save();
+        }*/
         $customers = Customer::allNotDeleteCustomers();
         return view('settings.customer', compact('customers'));
     }
