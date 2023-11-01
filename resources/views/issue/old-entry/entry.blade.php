@@ -302,14 +302,6 @@
         </div>
     </div>
 
-    <div class="col-md-12 clone hide" {{--style="display: none !important;"--}}>
-        <div class="control-group input-group form-group" style="margin-top:10px">
-            <input id="SLNo" type="text" class="form-control secure" name="serial_no[]" required>
-            <div class="input-group-btn">
-                <button class="btn btn-danger imageRemove" type="button"><i class="fa fa-times"></i> Remove</button>
-            </div>
-        </div>
-    </div>
 @endsection
 @section('page-modals')
     {{--@include('layouts.common-modals.new-product-category-modal')
@@ -398,7 +390,7 @@
         });
 
         $(document).ready(function () {
-          //  loadDataTable();
+            loadDataTable();
         });
 
         function returnStringFormatDate(_date) {
@@ -448,7 +440,7 @@
 
             dataTable = $('.social-media').DataTable({
                 ajax: {
-                    url: "/mexport/public/api/issue/all/" ,
+                    url: "/itcrafty/public/api/issue/all/" ,
                     dataSrc: ""
                 },
                 columns: [
