@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="author" content="PIXINVENT">
-    <title>IT Crafty - @yield('title')</title>
+    <title>MEXPORT - @yield('title')</title>
     <link rel="apple-touch-icon" href="{{ asset('/imageFolder/favicon.ico') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/imageFolder/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -16,9 +16,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/extensions/unslider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/weather-icons/climacons.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/forms/selects/select2.min.css') }}">
+
+
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
+
 
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/forms/icheck/icheck.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/vendors/css/forms/icheck/custom.css') }}">
@@ -43,7 +46,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/fonts/meteocons/style.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/css/pages/users.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/css/plugins/forms/checkboxes-radios.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/css/pages/app-invoice.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/css/pages/card-statistics.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/stack-admin/app-assets/css/pages/vertical-timeline.css') }}">
 
     <!-- link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/users.css')-->
     <!-- END: Page CSS-->
@@ -74,7 +80,6 @@
         ============== Vendor JavaScripts ===============
         ============================================= -->
 @yield('pageVendorScripts')
-
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/vendors.min.js') }}"></script>
 <!-- BEGIN Vendor JS-->
@@ -90,7 +95,9 @@
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/charts/chart.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/charts/jquery.sparkline.min.js') }}"></script>
-<script src="{{ asset('/stack-admin/app-assets/vendors/js/charts//leaflet/leaflet.js') }}"></script>
+
+<script src="{{ asset('/stack-admin/app-assets/vendors/js/charts/leaflet/leaflet.js') }}"></script>
+<script src="{{ asset('/stack-admin/app-assets/vendors/js/charts/apexcharts/apexcharts.min.js') }}"></script>
 
 <script src="{{ asset('/stack-admin/app-assets/data/jvector/visitor-data.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/extensions/unslider-min.js') }}"></script>
@@ -99,6 +106,9 @@
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+{{--<script src="{{ asset('/stack-admin/app-assets/js/scripts/tables/datatables/datatable-basic.js') }}"></script>
+<script src="{{ asset('/stack-admin/app-assets/js/scripts/tables/datatables/datatable-styling.js') }}"></script>
+<script src="{{ asset('/stack-admin/app-assets/js/scripts/tables/datatables/datatable-advanced.js') }}"></script>--}}
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/jszip.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/pdfmake.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/vfs_fonts.js') }}"></script>
@@ -106,12 +116,14 @@
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/buttons.print.min.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
 
+
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
+<script src="{{ asset('/stack-admin/app-assets/js/scripts/forms/select/form-select2.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/vendors/js/forms/icheck/icheck.min.js') }}"></script>
 
 <script src="{{ asset('/stack-admin/app-assets/js/scripts/forms/checkbox-radio.js') }}"></script>
 
-
+<script src="{{ asset('/stack-admin/app-assets/js/scripts/customizer.js') }}"></script>
 {{--<script src="{{ asset('/stack-admin/app-assets/js/scripts/ui/breadcrumbs-with-stats.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/js/scripts/pages/bootstrap-toast.js') }}"></script>--}}
 {{--<script src="{{ asset('/stack-admin/app-assets/vendors/js/extensions/sweetalert2.all.min.js') }}"></script>--}}
@@ -124,6 +136,9 @@
 <!-- BEGIN: Theme JS-->
 <script src="{{ asset('/stack-admin/app-assets/js/core/app-menu.js') }}"></script>
 <script src="{{ asset('/stack-admin/app-assets/js/core/app.js') }}"></script>
+<script src="{{ asset('/stack-admin/app-assets/js/scripts/pages/app-invoice.js') }}"></script>
+
+
 <!-- END: Theme JS-->
 @yield('pageScripts')
 </body>

@@ -41,7 +41,7 @@
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
-                                        <li><a data-action="reload" onclick="clearForm('ProductIssueForm'); changeButtonText(' Save', 'submit_button', 3); /*clearCheckBox(); */resetCkeditor('Description');"><i class="feather icon-rotate-cw"></i></a></li>
+                                        <li><a data-action="reload" onclick="refreshForm();"><i class="feather icon-rotate-cw"></i></a></li>
                                         <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
                                         <li><a data-action="close"><i class="feather icon-x"></i></a></li>
                                     </ul>
@@ -259,8 +259,9 @@
                                             <th class="text-center">Category</th>
                                             <th class="text-center">Sub Category</th>
                                             <th class="text-center">Product Name</th>
-                                            <th class="text-center">Serial No</th>
                                             <th class="text-center">Purchase Date</th>
+                                            <th class="text-center">Serial No</th>
+                                            <th class="text-center">Requisition No</th>
                                             <th class="text-center">Issue Date</th>
                                             <th class="text-center">Issue Type</th>
                                             <th class="text-center">Issue Description</th>
@@ -283,8 +284,9 @@
                                             <th class="text-center">Category</th>
                                             <th class="text-center">Sub Category</th>
                                             <th class="text-center">Product Name</th>
-                                            <th class="text-center">Serial No</th>
                                             <th class="text-center">Purchase Date</th>
+                                            <th class="text-center">Serial No</th>
+                                            <th class="text-center">Requisition No</th>
                                             <th class="text-center">Issue Date</th>
                                             <th class="text-center">Issue Type</th>
                                             <th class="text-center">Issue Description</th>
@@ -318,7 +320,7 @@
     @include('layouts.common-modal-js.new-factory-modal-js')
     @include('layouts.common-modal-js.new-designation-modal-js')
     @include('layouts.common-modal-js.new-department-modal-js')
-    @include('layouts.common-modal-js.new-purchase-product-modal-js')
+   {{-- @include('layouts.common-modal-js.new-purchase-product-modal-js')--}}
     <script>
 
         var dataTable = $('.social-media').DataTable({
@@ -390,8 +392,18 @@
         });
 
         $(document).ready(function () {
+            getProductCategoryList();
+            resetSelect2();
             loadDataTable();
+
         });
+
+        function refreshForm(){
+            getProductCategoryList();
+            clearForm('ProductIssueForm');
+            changeButtonText(' Save', 'submit_button', 3);
+            resetSelect2();
+        }
 
         function returnStringFormatDate(_date) {
             let targetDate = Date.parse(_date);
@@ -411,7 +423,128 @@
             document.getElementById("DataTableButton").click();
         }
 
+        function getProductCategoryList(){
+            var check = 1;
+           // console.log(check);
+            var url = '{{ route('settings.product.category.drop-down-list') }}';
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'}
+            });
+            if(check){
+                $.ajax({
+                    url: url,
+                    data: {check: check},
+                    type: "POST",
+                    dataType: "json",
+                    success: function (data) {
+                      //  console.log(data);
+                     //   return;
+                        defaultKey = "";
+                        defaultValue = "- - - Select Product Category - - -";
+                        $('select[id= "ProductCategory"]').empty();
 
+                        $('select[id= "ProductCategory"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+                        $.each(data, function(key,value){
+                            //console.log(data);
+                            $('select[id= "ProductCategory"]').append('<option value="'+ value +'">'+ key +'</option>');
+                        });
+
+                        resetSelect2();
+                    }
+                });
+            }
+            else{
+                defaultKey = "";
+                defaultValue = "- - - Select Product Category - - -";
+                $('select[id= "ProductCategory"]').empty();
+                $('select[id= "ProductCategory"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+
+                resetSelect2();
+            }
+        }
+        function getProductSubCategoryByCategory(_category) {
+            if($("#ProductSubCategory").length){
+                let category_id = _category.value;
+                var url = '{{ route('settings.product.sub-category.drop-down-list-category') }}';
+                $.ajaxSetup({
+                    headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'}
+                });
+                if(category_id){
+                    $.ajax({
+                        url: url,
+                        data: {category_id: category_id},
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            //console.log(data);
+                            //return;
+                            defaultKey = "";
+                            defaultValue = "- - - Select Product Sub-Category - - -";
+                            $('select[id= "ProductSubCategory"]').empty();
+
+                            $('select[id= "ProductSubCategory"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+                            $.each(data, function(key,value){
+                                //console.log(data);
+                                $('select[id= "ProductSubCategory"]').append('<option value="'+ value +'">'+ key +'</option>');
+                            });
+                            //$('#YarnCountName').trigger('chosen:updated');
+                            resetSelect2();
+                            getProductMasterList();
+                        }
+                    });
+                }
+                else{
+                    defaultKey = "";
+                    defaultValue = "- - - Select Product Sub-Category - - -";
+                    $('select[id= "ProductSubCategory"]').empty();
+                    $('select[id= "ProductSubCategory"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+                    resetSelect2();
+                }
+            }
+        }
+        function getProductMasterList() {
+            let category = $('select[name=product_category]').val();
+            let sub_category = $('select[name=product_sub_category]').val();
+
+            if(category){
+                if(sub_category){
+                    var url = '{{ route('settings.product.master.drop-down-list') }}';
+                    $.ajax({
+                        url: url,
+                        data: {category: category, sub_category: sub_category},
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            //console.log(data);
+                            //return;
+                            defaultKey = "";
+                            defaultValue = "- - - Select Product - - -";
+                            $('select[id= "ProductMaster"]').empty();
+
+                            $('select[id= "ProductMaster"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+                            $.each(data, function(key,value){
+                                //console.log(data);
+                                $('select[id= "ProductMaster"]').append('<option value="'+ value +'">'+ key +'</option>');
+                            });
+                            //$('#YarnCountName').trigger('chosen:updated');
+                            resetSelect2();
+                        }
+                    });
+                }
+                defaultKey = "";
+                defaultValue = "- - - Select Product - - -";
+                $('select[id= "ProductMaster"]').empty();
+                $('select[id= "ProductMaster"]').empty();
+                $('select[id= "ProductMaster"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+                resetSelect2();
+            }
+            defaultKey = "";
+            defaultValue = "- - - Select Product - - -";
+            $('select[id= "ProductMaster"]').empty();
+            $('select[id= "ProductMaster"]').empty();
+            $('select[id= "ProductMaster"]').append('<option value="'+ defaultKey +'">'+ defaultValue +'</option>');
+            resetSelect2();
+        }
 
         function makeTableSearchAble(){
             $('.social-media tfoot th').each( function () {
@@ -435,17 +568,16 @@
 
         function loadDataTable() {
             dataTable.destroy();
-            var free_table = '<tr><td class="text-center" colspan="17">--- Please Wait... Loading Data  ----</td></tr>';
+            var free_table = '<tr><td class="text-center" colspan="18">--- Please Wait... Loading Data  ----</td></tr>';
             $('.social-media').find('tbody').append(free_table);
 
             dataTable = $('.social-media').DataTable({
                 ajax: {
-                    url: "/itcrafty/public/api/issue/all/" ,
+                    url: "/itcrafty/public/api/issue/all" ,
                     dataSrc: ""
                 },
                 columns: [
                     {
-                        /*data: "id",*/
                         render: function(data, type, api_item) {
                             if(api_item.status === "A"){
                                 return "<p class='text-center'><a title= 'Show Detail' class= 'ShowDetail btn btn-info btn-sm btn-round fa fa-eye' data-id = "+ api_item.id +"></a></p>";
@@ -462,16 +594,6 @@
 
                             }else{
                                 return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.customer_name +"</strong></p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.designation === null){
-                                return "<p class = 'text-left'></p>";
-
-                            }else{
-                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.designation +"</strong></p>";
                             }
                         }
                     },
@@ -497,57 +619,31 @@
                     },
                     {
                         render: function(data, type, api_item){
+                            if(api_item.designation === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.designation +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.employee_id === null){
+                                return "<p class = 'text-left'></p>";
+
+                            }else{
+                                return "<p class = 'text-left'><strong>"+ api_item.employee_id +"</strong></p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
                             if(api_item.job_location === null){
                                 return "<p class = 'text-left'></p>";
 
                             }else{
                                 return "<p class = 'text-left'><strong>"+ api_item.job_location +"</strong></p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.issue_type === null){
-
-                                return "<p class = 'text-left'></p>";
-                            }else{
-                                return "<p class = 'text-left'>"+ api_item.issue_type +"</p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.issue_date === null){
-                                return "<p class = 'text-left'></p>";
-                            }else{
-                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.issue_date) +"</p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.release_date === null){
-                                return "<p class = 'text-left'></p>";
-                            }else{
-                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.release_date) +"</p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.reference_no === null){
-                                return "<p class = 'text-left'></p>";
-                            }else{
-                                return "<p class = 'text-left'>"+ api_item.reference_no +"</p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
-                            if(api_item.issue_description === null){
-                                return "<p class = 'text-left'></p>";
-                            }else{
-                                return "<p class = 'text-left'>"+ api_item.issue_description +"</p>";
                             }
                         }
                     },
@@ -580,15 +676,6 @@
                     },
                     {
                         render: function(data, type, api_item){
-                            if(api_item.sl_no === null){
-                                return "<p class = 'text-center'></p>";
-                            }else{
-                                return "<p class = 'text-center'>"+ api_item.sl_no +"</p>";
-                            }
-                        }
-                    },
-                    {
-                        render: function(data, type, api_item){
                             if(api_item.purchase_date === null){
                                 return "<p class = 'text-left'></p>";
                             }else{
@@ -598,10 +685,47 @@
                     },
                     {
                         render: function(data, type, api_item){
-                            if(api_item.warranty_in_months === null){
+                            if(api_item.sl_no === null){
+                                return "<p class = 'text-center'></p>";
+                            }else{
+                                return "<p class = 'text-center'>"+ api_item.sl_no +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.reference_no === null){
                                 return "<p class = 'text-left'></p>";
                             }else{
-                                return "<p class = 'text-left'>"+ api_item.warranty_in_months +"</p>";
+                                return "<p class = 'text-left'>"+ api_item.reference_no +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_date === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.issue_date) +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_type === null){
+
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.issue_type +"</p>";
+                            }
+                        }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.issue_description === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ api_item.issue_description +"</p>";
                             }
                         }
                     },
@@ -613,7 +737,17 @@
                                 return "<p class = 'text-left'>"+ api_item.remarks +"</p>";
                             }
                         }
+                    },
+                    {
+                        render: function(data, type, api_item){
+                            if(api_item.release_date === null){
+                                return "<p class = 'text-left'></p>";
+                            }else{
+                                return "<p class = 'text-left'>"+ returnStringFormatDate(api_item.release_date) +"</p>";
+                            }
+                        }
                     }
+
                 ],
                 dom: 'Bfrtip',
                 pagingType: 'full_numbers',
@@ -822,6 +956,13 @@
             $('input[name=issue_date]').val('');
             $('input[name=issue_description]').val('');
             $('input[name=remarks]').val('');
+        }
+
+        function resetSelect2() {
+            $(".select2").select2({
+                dropdownAutoWidth: true,
+                width: '100%'
+            });
         }
     </script>
 @endsection
