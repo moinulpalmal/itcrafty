@@ -34,7 +34,7 @@ class ProductIssue extends Model
             $product_issue->issue_type_id = $request->issue_type;
             $product_issue->issue_date = $request->issue_date;
             $product_issue->issue_description = $request->issue_description;
-            $product_issue->reference_no = $request->requisition_no;
+            $product_issue->reference_no = $request->reference_no;
             $product_issue->remarks = $request->remarks;
             $product_issue->inserted_by = Auth::id();
             if($product_issue->save()){
@@ -52,7 +52,7 @@ class ProductIssue extends Model
             $product_issue->issue_type_id = $request->issue_type;
             $product_issue->issue_date = $request->issue_date;
             $product_issue->issue_description = $request->issue_description;
-            $product_issue->reference_no = $request->requisition_no;
+            $product_issue->reference_no = $request->reference_no;
             $product_issue->remarks = $request->remarks;
             $product_issue->inserted_by = Auth::id();
 

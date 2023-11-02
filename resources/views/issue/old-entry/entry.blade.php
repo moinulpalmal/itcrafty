@@ -593,7 +593,7 @@
                                 return "<p class = 'text-left'></p>";
 
                             }else{
-                                return "<p class = 'text-left text-info text-bold-700'><strong>"+ api_item.customer_name +"</strong></p>";
+                                return "<p class = 'text-left text-success text-bold-700'><strong>"+ api_item.customer_name +"</strong></p>";
                             }
                         }
                     },
@@ -866,9 +866,11 @@
                                     buttonEnable('submit_button');
                                     clearIssueInfo();
                                     clearProductSection();
+                                    loadDataTable();
                                 }else{
                                     clearFormWithoutDelay('ProductIssueForm');
                                     buttonEnable('submit_button');
+                                    loadDataTable();
                                     moveToTop();
                                 }
                             });
