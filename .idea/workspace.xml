@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24f263a9-50b2-4056-9843-880ae094c5fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Issue/IssueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Issue/IssueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/ProductDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/ProductIssue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductIssue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/ProductMaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductMaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/ProductSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ProductSubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/issue/old-entry/entry.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -614,7 +607,7 @@
       <workItem from="1698640407066" duration="5127000" />
       <workItem from="1698729318441" duration="2912000" />
       <workItem from="1698829031384" duration="7295000" />
-      <workItem from="1698897018410" duration="11625000" />
+      <workItem from="1698897018410" duration="13545000" />
     </task>
     <servers />
   </component>
