@@ -580,7 +580,7 @@
                     {
                         render: function(data, type, api_item) {
                             if(api_item.status === "A"){
-                                return "<p class='text-center'><a title= 'Show Detail' class= 'ShowDetail btn btn-info btn-sm btn-round fa fa-eye' data-id = "+ api_item.id +"></a></p>";
+                                return "<p class='text-center'><a title= 'Edit' class= 'EditDetail btn btn-warning btn-sm btn-round fa fa-edit' data-id = "+ api_item.id +"></a></p>";
                             }
                             else{
                                 return "<p class='text-center'></p>";
@@ -819,11 +819,11 @@
             makeTableSearchAble();
         }
 
-        $('#social-media-table').on('click',".ShowDetail", function(){
+        $('#social-media-table').on('click',".EditDetail", function(){
             var button = $(this);
             var id = button.attr("data-id");
-            var url = '{{ route('issue.old.list.edit') }}';
-           // url = url.replace('pid', id);
+            var url = '{{ route('issue.old.list.edit', ['id' =>  'pid']) }}';
+            url = url.replace('pid', id);
             window.open(url, "_blank");
         });
 

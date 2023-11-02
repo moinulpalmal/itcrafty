@@ -174,4 +174,12 @@ class ProductSubCategory extends Model
         //return $DropDownData;
         //return json_encode($DropDownData);
     }
+
+    public static function getProductSubCategoriesForSelectField(){
+        return DB::table('product_sub_categories')
+            ->select('id', 'name', 'status')
+            ->where('status', '=', 'A')
+            ->orderBy('name', 'ASC')
+            ->get();
+    }
 }

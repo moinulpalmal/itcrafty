@@ -88,6 +88,10 @@ class ProductDetail extends Model
     public static function allProductDetailForSelectField(){
         return null;
     }
+
+    public static function allProductDetailForSelectFieldByMasterId($master_id){
+        return null;
+    }
     public static function allProductDetail(){
         return DB::table('product_details')
             ->leftjoin('product_masters', 'product_masters.id', '=', 'product_details.product_master')

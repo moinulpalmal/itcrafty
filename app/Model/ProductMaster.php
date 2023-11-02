@@ -235,12 +235,40 @@ class ProductMaster extends Model
         //return json_encode($DropDownData);
     }
 
+    public static function getProductMastersForSelectField(){
+        return DB::table('product_masters')
+            ->leftjoin('manufacturers', 'manufacturers.id', '=', 'product_masters.manufacturer')
+            ->select('product_masters.id', DB::raw('CONCAT(IFNULL(manufacturers.name, " "), "-" ,product_masters.name) AS name'))
+            ->where('product_masters.status', '=', 'A')
+            ->orderBy('manufacturers.name', 'ASC')
+            ->orderBy('product_masters.name', 'ASC')
+            ->get();
+    }
+
+    public static function getProductMastersForSelectFieldBySubCategoryId($sub_category_id){
+        return DB::table('product_masters')
+            ->leftjoin('manufacturers', 'manufacturers.id', '=', 'product_masters.manufacturer')
+            ->select('product_masters.id', DB::raw('CONCAT(IFNULL(manufacturers.name, " "), "-" ,product_masters.name) AS name'))
+            ->where('product_masters.status', '=', 'A')
+            ->where('product_masters.product_sub_category', '=', $sub_category_id)
+            ->orderBy('manufacturers.name', 'ASC')
+            ->orderBy('product_masters.name', 'ASC')
+            ->get();
+    }
     public static function getCategoryName($id){
         return ProductCategory::find(ProductMaster::find($id)->product_category)->name;
     }
 
+    public static function getCategoryId($id){
+        return ProductCategory::find(ProductMaster::find($id)->product_category)->id;
+    }
+
     public static function getSubCategoryName($id){
         return ProductSubCategory::find(ProductMaster::find($id)->product_sub_category)->name;
+    }
+
+    public static function getSubCategoryId($id){
+        return ProductSubCategory::find(ProductMaster::find($id)->product_sub_category)->id;
     }
 
     public static function getManufacturerName($id){

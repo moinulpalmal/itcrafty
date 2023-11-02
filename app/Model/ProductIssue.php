@@ -68,6 +68,7 @@ class ProductIssue extends Model
 
     }
 
+
     public static function allNotDeletedProductIssues(){
         return DB::table('product_issues')
             ->leftJoin('product_details', 'product_details.id', '=', 'product_issues.product_detail_id')
