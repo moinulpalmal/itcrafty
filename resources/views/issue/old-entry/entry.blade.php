@@ -824,6 +824,7 @@
             var id = button.attr("data-id");
             var url = '{{ route('issue.old.list.edit', ['id' =>  'pid']) }}';
             url = url.replace('pid', id);
+            alert(url);
             window.open(url, "_blank");
         });
 
@@ -894,8 +895,8 @@
         });
 
         function getCustomerInfo(_value) {
-          //  console.log(_value.value);
-            //return;
+        //    console.log(_value.value);
+        //     return;
             if(_value.value){
                 var url = '<?php echo e(route('settings.employee.info-by-emp-id')); ?>';
                 $.ajax({
@@ -941,6 +942,41 @@
                 $('select[name=department]').val('').change();
             }
         }
+
+
+        // $('#social-media-table').on('click',".EditDetail", function(){
+        //     var button = $(this);
+        //     var id = button.attr("data-id");
+        //     var url = '{{ route('issue.old.list.edit', ['id' =>  'pid']) }}';
+        //     url = url.replace('pid', id);
+        //     $.ajax({
+        //         url: url,
+        //         method:'get',
+        //         data:{id: id, _token: '{{csrf_token()}}'},
+        //         success:function(data){
+        //             console.log(data);
+        //             // return
+        //             $('input[name=employee_id]').val(data.customer_id);
+        //             $('select[name=product_master]').val(data.product_master_id).change();
+        //             $('select[name=issue_type]').val(data.issue_type).change();
+        //             $('input[name=reference_no]').val(data.reference_no);
+        //             $('input[name=issue_date]').val(data.issue_date);
+        //             $('input[name=issue_description]').val(data.issue_description);
+        //             $('input[name=remarks]').val(data.remarks);
+        //             $('input[name=id]').val(data.id);
+
+        //             moveToTop();
+        //             changeButtonText(' Update', 'submit_button', 3);
+        //         },
+        //         error:function(error){
+        //             moveToTop();
+        //             swalError(error);
+        //             clearForm('WorkExperienceForm');
+        //             changeButtonText(' Save', 'submit_button', 3);
+        //         }
+        //     })
+
+        // });
 
         function clearProductSection(){
             $('select[name=issue_type]').val('').change();
