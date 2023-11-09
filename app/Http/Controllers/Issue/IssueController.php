@@ -42,32 +42,18 @@ class IssueController extends Controller
                 $product_categories = ProductCategory::allProductCategoriesForSelectField();
                 $product_sub_categories = ProductSubCategory::getProductSubCatForSelectByProductCategory($product_category_id);
                 $product_masters = ProductMaster::getProductMastersForSelectFieldBySubCategoryId($product_sub_category_id);
-                $product_details = ProductDetail::allProductDetailForSelectField();
                 $issue_types = issueType::getListForSlect();
+                $customer = Customer::find($product_issue->customer_id);
+                $product_detail = null;
+                if((integer)$product_issue->product_detail_id != 0) {
+                    $product_detail = ProductDetail::find($product_issue->product_detail_id);
+                }
 
-
-                $customer = DB::table('product_issues')
-                        ->join('customers','customers.id', '=', 'product_issues.customer_id')
-                        ->select('customers.id', 'customers.employee_id','customers.factory','customers.designation','customers.department','customers.name','customers.email',
-                            'customers.mobile_no','customers.ext_no','customers.mobile_no','customers.job_location','customers.status')
-                        ->where('customers.id',$product_issue->customer_id)
-                        ->get();
-
-
-                // if($product_issue->product_detail_id !== 0)
-                //     {
-                //         $product_info = DB::table('product_issues')
-                //                 ->join('product_details','product_details.product_master', '=', 'product_issues.id')
-                //                 ->join('product_masters','product_masters.id', '=', 'product_issues.product_master_id')
-                //                 ->select('product_masters.id','product_masters.name','product_details.sl_no','product_details.purchase_date','product_details.warranty_in_months')
-                //                 ->where('product_masters.id',$product_issue->product_detail_id)
-                //                 ->get();
-                //     }
-
-                // else $product_info = 0;
-
-                return view('issue.old-entry.edit', compact('id','issue_types','product_issue','product_category_id', 'product_sub_category_id',
-                 'product_categories', 'product_sub_categories','product_masters', 'product_details','customer','factories','departments','designations'));
+                return view('issue.old-entry.edit',
+                    compact('id','issue_types','product_issue',
+                    'product_category_id', 'product_sub_category_id',
+                    'product_categories', 'product_sub_categories','product_masters',
+                    'customer','factories','departments','designations', 'product_detail'));
             }
         }
 
